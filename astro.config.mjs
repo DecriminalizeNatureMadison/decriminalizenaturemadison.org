@@ -7,7 +7,8 @@ import icon from "astro-icon"
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  integrations: [mdx(), icon(), tailwind({
+  integrations: [mdx(), icon({include: {"pajamas": ["arrow-right"]}}), tailwind({
     applyBaseStyles: false,
   }), compress()],
+  site: "https:///decriminalizenaturemadison.org"
 })

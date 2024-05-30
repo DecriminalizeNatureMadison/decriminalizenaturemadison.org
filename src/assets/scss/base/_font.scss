@@ -23,6 +23,14 @@
 }
 
 @font-face {
+  font-family: 'EB Garamond';
+  src: local('EB Garamond'), url('/fonts/EBGaramond-Variable.woff') format('woff'), url('/fonts/EBGaramond-Variable.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Open Sans';
   src: local('Open Sans Italic'), local('OpenSans-Italic'), url('/fonts/OpenSans-Italic.woff2') format('woff2'),
     url('/fonts/OpenSans-Italic.woff') format('woff');

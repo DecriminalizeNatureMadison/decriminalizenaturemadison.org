@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+
+const { image, alt, heading, description } = Astro.props;
+---
+
+<aside class="bg-white max-w-md">
+    <Image src={image} alt={alt}/>
+    <div class="sidebar-content">
+        <slot>
+            <h4 class="sidebar-header">{heading}</h4>
+            <p>{description}</p>
+        </slot>
+    </div>
+</aside>
+
+<style>
+    .sidebar-content {
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .sidebar-header {
+        font-weight: normal;
+        color: var(--action-color);
+    }
+</style>

@@ -1,23 +1,21 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
-import { DarkMode } from 'accessible-astro-components'
 import { Image } from 'astro:assets'
-import logo from '../assets/img/logo.svg'
+import logo from '../assets/img/logo-filled.svg'
+const { showImage = true } = Astro.props;
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
-    <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image src={logo} alt="Your Logo" width="47" height="37" />
-      <span class="font-bold">Accessible Astro</span>
+    <a href="/" class="flex items-center gap-2 !no-underline logo">
+      <Image src={logo} alt="Decriminalize Nature Madison logo" height="60rem" />
     </a>
-    <div class="wrapper">
+    <div class="wrapper ml-auto">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
         <ul class="menu">
           <slot />
         </ul>
       </nav>
-      <DarkMode />
       <ResponsiveToggle />
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
@@ -27,6 +25,12 @@ import logo from '../assets/img/logo.svg'
     </nav>
   </div>
 </div>
+
+{!showImage && (<style>
+  .logo {
+    visibility: hidden;
+  }
+</style>)}
 
 <script>
   document.addEventListener('astro:page-load', () => {
@@ -108,100 +112,100 @@ import logo from '../assets/img/logo.svg'
 
     // execution
     mainMenu &&
-      mainMenu.addEventListener('keydown', (event) => {
-        const element = event.target as Element
-        const currentMenuItem = element.closest('li')
-        const menuItems = [...mainMenu.querySelectorAll('.menu-item')]
-        const currentDropdownMenu = element.closest('.has-dropdown button')
-        const currentDropdownMenuItem = element.closest('.has-dropdown li')
-        const currentIndex = menuItems.findIndex((item) => item === currentMenuItem)
+    mainMenu.addEventListener('keydown', (event) => {
+      const element = event.target as Element
+      const currentMenuItem = element.closest('li')
+      const menuItems = [...mainMenu.querySelectorAll('.menu-item')]
+      const currentDropdownMenu = element.closest('.has-dropdown button')
+      const currentDropdownMenuItem = element.closest('.has-dropdown li')
+      const currentIndex = menuItems.findIndex((item) => item === currentMenuItem)
 
-        const key = event.key
-        let targetItem
+      const key = event.key
+      let targetItem
 
-        if (key === 'ArrowRight') {
-          if (menuItems.indexOf(currentMenuItem) === menuItems.length - 1) {
-            targetItem = menuItems[0]
+      if (key === 'ArrowRight') {
+        if (menuItems.indexOf(currentMenuItem) === menuItems.length - 1) {
+          targetItem = menuItems[0]
+        } else {
+          targetItem = menuItems[currentIndex + 1]
+        }
+      }
+
+      if (key === 'ArrowLeft') {
+        if (menuItems.indexOf(currentMenuItem) === 0) {
+          targetItem = menuItems[menuItems.length - 1]
+        } else {
+          targetItem = menuItems[currentIndex - 1]
+        }
+      }
+
+      if (key === 'Escape') {
+        targetItem = menuItems[0]
+      }
+
+      if (currentDropdownMenu) {
+        const firstDropdownItem = currentDropdownMenu.nextElementSibling.querySelector('li')
+
+        if (key === 'ArrowDown') {
+          event.preventDefault()
+          openDropdownMenu(currentDropdownMenu)
+          targetItem = firstDropdownItem
+        }
+
+        if (key === 'Escape') {
+          closeDropdownMenu(currentDropdownMenu)
+        }
+      }
+
+      if (currentDropdownMenuItem) {
+        const currentDropdownList = currentDropdownMenuItem.parentNode
+        const dropdownMenuItems = [...currentDropdownList.querySelectorAll('li')]
+        const currentIndex = dropdownMenuItems.findIndex((item) => item === currentDropdownMenuItem)
+
+        if (key === 'ArrowDown') {
+          event.preventDefault()
+
+          if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
+            targetItem = dropdownMenuItems[0]
           } else {
-            targetItem = menuItems[currentIndex + 1]
+            targetItem = dropdownMenuItems[currentIndex + 1]
           }
         }
 
-        if (key === 'ArrowLeft') {
-          if (menuItems.indexOf(currentMenuItem) === 0) {
-            targetItem = menuItems[menuItems.length - 1]
+        if (key === 'ArrowUp') {
+          event.preventDefault()
+
+          if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === 0) {
+            targetItem = dropdownMenuItems[dropdownMenuItems.length - 1]
           } else {
-            targetItem = menuItems[currentIndex - 1]
+            targetItem = dropdownMenuItems[currentIndex - 1]
           }
         }
 
         if (key === 'Escape') {
-          targetItem = menuItems[0]
+          const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
+          targetItem = currentDropdownMenu.parentNode
+          closeAllDropdownMenus()
         }
 
-        if (currentDropdownMenu) {
-          const firstDropdownItem = currentDropdownMenu.nextElementSibling.querySelector('li')
+        if (key === 'Tab') {
+          const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
 
-          if (key === 'ArrowDown') {
-            event.preventDefault()
-            openDropdownMenu(currentDropdownMenu)
-            targetItem = firstDropdownItem
-          }
-
-          if (key === 'Escape') {
+          if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
             closeDropdownMenu(currentDropdownMenu)
           }
         }
+      }
 
-        if (currentDropdownMenuItem) {
-          const currentDropdownList = currentDropdownMenuItem.parentNode
-          const dropdownMenuItems = [...currentDropdownList.querySelectorAll('li')]
-          const currentIndex = dropdownMenuItems.findIndex((item) => item === currentDropdownMenuItem)
-
-          if (key === 'ArrowDown') {
-            event.preventDefault()
-
-            if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
-              targetItem = dropdownMenuItems[0]
-            } else {
-              targetItem = dropdownMenuItems[currentIndex + 1]
-            }
-          }
-
-          if (key === 'ArrowUp') {
-            event.preventDefault()
-
-            if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === 0) {
-              targetItem = dropdownMenuItems[dropdownMenuItems.length - 1]
-            } else {
-              targetItem = dropdownMenuItems[currentIndex - 1]
-            }
-          }
-
-          if (key === 'Escape') {
-            const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
-            targetItem = currentDropdownMenu.parentNode
-            closeAllDropdownMenus()
-          }
-
-          if (key === 'Tab') {
-            const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
-
-            if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
-              closeDropdownMenu(currentDropdownMenu)
-            }
-          }
-        }
-
-        if (targetItem) {
-          targetItem.querySelector('a, button, input').focus()
-        }
-      })
+      if (targetItem) {
+        targetItem.querySelector('a, button, input').focus()
+      }
+    })
 
     dropdownMenus &&
-      dropdownMenus.forEach((dropdownMenu) => {
-        dropdownMenu.addEventListener('click', toggleDropdownMenu)
-      })
+    dropdownMenus.forEach((dropdownMenu) => {
+      dropdownMenu.addEventListener('click', toggleDropdownMenu)
+    })
 
     setActiveMenuItem()
     checkMenuSize()
@@ -291,7 +295,7 @@ import logo from '../assets/img/logo.svg'
         .has-dropdown > button:focus {
           text-decoration: underline;
           text-decoration-thickness: 1px;
-          text-decoration-style: wavy;
+          /*text-decoration-style: wavy;*/
           text-underline-offset: 7px;
         }
 

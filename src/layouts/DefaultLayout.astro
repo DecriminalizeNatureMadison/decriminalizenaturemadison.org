@@ -6,11 +6,12 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
 const {
-  title = 'Astro',
-  description = 'A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.',
+  title = 'Decriminalize Nature Madison',
+  description = 'Decriminalize Nature Madison is a grassroots movement advocating for the safe and responsible decriminalization of entheogenic plants and fungi in the City of Madison, WI.',
   url,
-  image = '/social-preview-image.png',
-  author = 'Mark Teekman',
+  image = '/img/logo.svg',
+  author = 'Decriminalize Nature Madison',
+  showNavigationImage = true,
 } = Astro.props
 ---
 
@@ -26,15 +27,13 @@ const {
     <SiteMeta
       title={title}
       description={description.substring(0, 100)}
-      url={Astro.site
-        ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
-        : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
+      url=`${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
       image={image}
       author={author}
     />
   </head>
   <body>
-    <Header />
+    <Header showNavigationImage={showNavigationImage} />
     <main id="main-content" transition:animate="fade">
       <slot />
     </main>
@@ -81,7 +80,7 @@ const {
         background-color: var(--background);
 
         main {
-          flex: 1 0 auto;
+          flex: 0 0 auto;
         }
 
         footer {

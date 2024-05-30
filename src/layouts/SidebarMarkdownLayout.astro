@@ -1,0 +1,21 @@
+---
+import SidebarLayout from './SidebarLayout.astro'
+
+const { frontmatter } = Astro.props
+const allAssetModules = import.meta.glob("../assets/img/*");
+const imageAssetModule = allAssetModules["../assets/img/" + frontmatter.image];
+if (imageAssetModule === null || imageAssetModule === undefined) {
+    throw new Error("Invalid image " + frontmatter.image);
+}
+const image = imageAssetModule();
+---
+
+<SidebarLayout
+        title={frontmatter.title}
+        image={image}
+        alt={frontmatter.alt}
+        heading={frontmatter.heading}
+        description={frontmatter.description}
+>
+    <slot/>
+</SidebarLayout>

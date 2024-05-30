@@ -1,18 +1,14 @@
 ---
-import CallToAction from './CallToAction.astro'
-
 const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-  <CallToAction />
   <section class="py-8">
-    <div class="container">
+    <div class="container grid-cols-2">
       <p>
-        &copy; {currentYear} - Starter Theme for <a href="https://astro.build/">Astro</a>. Made with ❤️ by <a
-          href="https://github.com/markteekman">Mark Teekman</a
-        >.
+        &copy; {currentYear} Decriminalize Nature Madison
       </p>
+      <a href="/licenses">Licenses</a>
     </div>
   </section>
 </footer>

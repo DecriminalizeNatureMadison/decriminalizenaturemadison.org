@@ -1,0 +1,22 @@
+---
+import SidebarLayout from '../layouts/SidebarLayout.astro'
+import BlogPost from '../components/BlogPost.astro'
+import blogImage from '../assets/img/heavenly-blue-morning-glory.jpg'
+import emblemImage from '../assets/img/emblem-filled.svg'
+---
+<SidebarLayout
+        title="Blog"
+        image={blogImage}
+        alt="A shriveling Heavenly Blue morning glory in front of a green leafy background"
+        heading="Welcome to the blog!"
+        description="This is where we communicate news and updates"
+>
+    <BlogPost
+        img={emblemImage}
+        alt="The Decriminalize Nature Madison emblem"
+        height=100
+        postTitle="Website launched"
+        excerpt="Welcome to our website!"
+    />
+</SidebarLayout>
+
