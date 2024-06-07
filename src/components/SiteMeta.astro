@@ -1,9 +1,13 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
+import {log} from "astro/dist/core/logger/core";
 
-const { title, description, url, image, author } = Astro.props
+const { title, description, image, author } = Astro.props
 
 let subtitle = 'Decriminalize Nature Madison'
+
+const canonicalPageURL = new URL(Astro.url.pathname, Astro.site)
+const logoUrl = new URL("/img/logo-filled.svg", Astro.site)
 ---
 
 <!-- general meta -->
@@ -15,8 +19,8 @@ let subtitle = 'Decriminalize Nature Madison'
 <meta property="og:title" content={`${title} - ${subtitle}`} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
-<meta property="og:url" content={url} />
-<meta property="og:image" content=`${Astro.site}${image}` />
+<meta property="og:url" content={canonicalPageURL} />
+<meta property="og:image" content={logoUrl} />
 
 <!-- twitter card -->
 

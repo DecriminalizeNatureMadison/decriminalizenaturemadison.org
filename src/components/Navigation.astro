@@ -1,14 +1,14 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { Image } from 'astro:assets'
-import logo from '../assets/img/logo-filled.webp'
+import logo from '../assets/img/logo-filled.svg'
 const { showImage = true } = Astro.props;
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline logo">
-      <Image src={logo} alt="Decriminalize Nature Madison logo" height="60rem" />
+      <Image src={logo} alt="Decriminalize Nature Madison logo" height="60rem" loading="eager" />
     </a>
     <div class="wrapper ml-auto">
       <nav class="desktop-menu" aria-label="Main navigation desktop">

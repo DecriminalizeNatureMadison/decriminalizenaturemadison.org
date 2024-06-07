@@ -24,10 +24,9 @@
 
 @font-face {
   font-family: 'EB Garamond';
-  src: local('EB Garamond'), url('/fonts/EBGaramond-Variable.woff') format('woff'), url('/fonts/EBGaramond-Variable.woff2') format('woff2');
-  font-weight: bold;
+  src: local('EB Garmamond')  url('/fonts/EBGaramond-Variable.woff') format('woff'), url('/fonts/EBGaramond-Variable.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
