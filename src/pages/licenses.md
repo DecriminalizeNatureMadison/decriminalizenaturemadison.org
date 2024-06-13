@@ -20,3 +20,10 @@ This website uses some licensed works. You can find details on their authors and
   - **Usage**: Sidebar image on the [Blog](/blog) page
   - **Modifications**: None
   - **License**: [CC BY 3.0 US Deed](https://creativecommons.org/licenses/by/3.0/us/)
+
+- **Work:** *Pine Trees Under Starry Night Sky*
+  - **Author**: James Wheeler
+  - **Source**: [pexels.com](https://www.pexels.com/photo/pine-trees-under-starry-night-sky-1539225/)
+  - **Usage**: Sidebar image on the [Why](/why.mdx) page
+  - **Modifications**: None
+  - **License**: [Pexels "Free to Use" license](https://www.pexels.com/license/)

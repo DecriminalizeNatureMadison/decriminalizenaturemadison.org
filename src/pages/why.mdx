@@ -1,0 +1,109 @@
+---
+layout: ../layouts/MarkdownLayout.astro
+title: About
+heading: About
+---
+
+import { Image } from 'astro:assets'
+import brainIcon from "../assets/img/brain.svg"
+import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
+
+# Why should Madison decriminalize nature?
+
+<ul id="benefits">
+    <li id="mental-health-benefits">
+        <Image class="icon" src={brainIcon} alt="An icon of a brain on a yellow background surrounded in blue wavy lines"/>
+        <div>
+            <h4>Entheogens improve mental health</h4>
+            <p>
+                Entheogens such as psilocybin and have been shown to alleviate symptoms of depression<a href="#footnote-1"><sup>[1]</sup></a>,
+                end-of-life anxiety<a href="#footnote-2"><sup>[2]</sup></a>, and alcohol use disorder<a href="#footnote-3"><sup>[3]</sup></a>.
+                Millions of American adults struggle with mental health conditions treatment-resistant depression and they deserve to have access
+                to these promising medicines without needing to worry about being charged with a felony.
+            </p>
+        </div>
+    </li>
+    <li id="current-penalties">
+        <Image class="icon" src={flowerBehindBarsIcon} alt="An icon of an orange flower behind jail cell bars"/>
+        <div>
+            <h4>Wisconsin law is incredibly harsh</h4>
+            <p>
+                Under current Wisconsin criminal code, almost all entheogen-related crimes are felonies <a href="#footnote-4"><sup>[4]</sup></a>
+                punishable by up to 3.5 years in prison, a fine of up to $10,000 or both<a href="#footnote-4"><sup>[4]</sup></a>.
+                For some entheogens such as mescaline, harvesting just 1 gram is punishable by up to 12.5 years in prison,
+                a fine of up to $25,000 or both<a href="#footnote-4"><sup>[4]</sup></a>. This is despite the fact that mescaline has been used
+                safely as a sacred medicine by indigenous cultures for thousands of years<a href="#footnote-5"><sup>[5]</sup></a>,
+                and has recently been found to be associated with self-reported psychiatric improvements and enduring positive
+                life changes<a href="#footnote-6"><sup>[6]</sup></a>.
+
+            </p>
+        </div>
+    </li>
+</ul>
+
+
+
+{/*
+    Community benefits
+    Current laws are incredibly harsh
+    Safe and non-addictive
+    Save city resources
+    We do research here
+*/}
+
+<ol id="footnotes" class="text-xs">
+    <li id="footnote-1">
+        [1] <a href="https://jamanetwork.com/journals/jama/fullarticle/2808950">Raison CL, Sanacora G, Woolley J, et al. Single-Dose Psilocybin Treatment for Major Depressive Disorder: A Randomized Clinical Trial. JAMA. 2023;330(9):843–853. doi:10.1001/jama.2023.14530</a>
+    </li>
+    <li id="footnote-2">
+        [2] <a href="https://pubmed.ncbi.nlm.nih.gov/34619818/">Griffiths, Roland R et al. “Psilocybin produces substantial and sustained decreases in depression and anxiety in patients with life-threatening cancer: A randomized double-blind trial.” Journal of psychopharmacology (Oxford, England) vol. 30,12 (2016): 1181-1197. doi:10.1177/0269881116675513</a>
+    </li>
+    <li id="footnote-3">
+        [3] <a href="https://pubmed.ncbi.nlm.nih.gov/36001306/">Bogenschutz, Michael P et al. “Percentage of Heavy Drinking Days Following Psilocybin-Assisted Psychotherapy vs Placebo in the Treatment of Adult Patients With Alcohol Use Disorder: A Randomized Clinical Trial.” JAMA psychiatry vol. 79,10 (2022): 953-962. doi:10.1001/jamapsychiatry.2022.2096</a>
+    </li>
+    <li id="footnote-4">
+        [4] <a href="https://docs.google.com/spreadsheets/d/1yqqTTEAO4hdnxKM-GBU6Djz3KkvFSwGIZDgs3fNW7wk/edit?gid=0#gid=0">Bogenschutz, Michael P et al. “Percentage of Heavy Drinking Days Following Psilocybin-Assisted Psychotherapy vs Placebo in the Treatment of Adult Patients With Alcohol Use Disorder: A Randomized Clinical Trial.” JAMA psychiatry vol. 79,10 (2022): 953-962. doi:10.1001/jamapsychiatry.2022.2096</a>
+    </li>
+    <li id="footnote-5">
+        [5] <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(02)08701-9/fulltext">Bruhn JG, De Smet PA, El-Seedi HR, Beck O.. “Mescaline use for 5700 years”. Lancet. 2002;359(9320):1866.</a>
+    </li>
+    <li id="footnote-6">
+        [5] <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8033766/">Agin-Liebes, Gabrielle et al. “Naturalistic Use of Mescaline Is Associated with Self-Reported Psychiatric Improvements and Enduring Positive Life Changes.” ACS pharmacology & translational science vol. 4,2 543-552. 23 Mar. 2021, doi:10.1021/acsptsci.1c00018</a>
+    </li>
+    <li id="footnote-7">
+        [5] <a href="https://pubmed.ncbi.nlm.nih.gov/33989464/">Zhdanava, Maryia et al. “The Prevalence and National Burden of Treatment-Resistant Depression and Major Depressive Disorder in the United States.” The Journal of clinical psychiatry vol. 82,2 20m13699. 16 Mar. 2021, doi:10.4088/JCP.20m13699</a>
+    </li>
+</ol>
+
+<style>
+    {`
+        .icon {
+           max-width: 5em;
+           padding-right: 1%;
+        }
+
+        #benefits {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #benefits li {
+            display: flex;
+            padding-top: 0.1rem;
+            flex-direction: row;
+        }
+
+        #footnotes li {
+            padding-bottom: 1em;
+        }
+
+        h1 {
+            color: var(--action-color);
+        }
+
+        ul, ol {
+            margin-left: 0 !important;
+        }
+    `}
+</style>
