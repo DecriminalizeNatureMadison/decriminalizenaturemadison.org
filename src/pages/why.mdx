@@ -7,35 +7,73 @@ heading: About
 import { Image } from 'astro:assets'
 import brainIcon from "../assets/img/brain.svg"
 import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
+import mushroomIcon from "../assets/img/mushrooms.svg"
+import clockIcon from "../assets/img/clock.svg"
+import heartIcon from "../assets/img/heart.svg"
 
 # Why should Madison decriminalize nature?
 
 <ul id="benefits">
     <li id="mental-health-benefits">
-        <Image class="icon" src={brainIcon} alt="An icon of a brain on a yellow background surrounded in blue wavy lines"/>
+        <Image class="icon" loading="eager" src={brainIcon} alt="An icon of a brain on a yellow background surrounded in blue wavy lines"/>
         <div>
             <h4>Entheogens improve mental health</h4>
             <p>
-                Entheogens such as psilocybin and have been shown to alleviate symptoms of depression<a href="#footnote-1"><sup>[1]</sup></a>,
+                Entheogens such as psilocybin ("magic mushrooms") have been shown to alleviate symptoms of depression<a href="#footnote-1"><sup>[1]</sup></a>,
                 end-of-life anxiety<a href="#footnote-2"><sup>[2]</sup></a>, and alcohol use disorder<a href="#footnote-3"><sup>[3]</sup></a>.
-                Millions of American adults struggle with mental health conditions treatment-resistant depression<a href="#footnote-7"><sup>[7]</sup></a>
-                and they deserve to have access to these promising medicines without needing to worry about being charged with a felony.
+                Millions of American adults struggle with mental health conditions like treatment-resistant depression<a href="#footnote-7"><sup>[7]</sup></a>
+                and they deserve to have access to these promising medicines without living under the threat of a felony.
+            </p>
+        </div>
+    </li>
+    <li id="safe-and-non-addictive">
+        <Image class="icon" src={mushroomIcon} alt="An icon of two brown capped mushrooms with stems" loading="eager" />
+        <div>
+            <h4>Entheogens are safe and non-addictive</h4>
+            <p>
+                Entheogenic plants and fungi are physiologically safe and do not lead to dependence or addiction<a href="#footnote-7"><sup>[7]</sup></a><a href="#footnote-8"><sup>[8]</sup></a>.
+                In fact, entheogens have been shown to help break addictions such as alcohol use disorder<a href="#footnote-3"><sup>[3]</sup></a> and tobacco use disorder<a href="#footnote-9"><sup>[9]</sup></a>.
+                UW-Madison is even studying psilocybin ("magic mushrooms") as a way to help treat opioid use disorder<a href="#footnote-10"><sup>[10]</sup></a>.
+            </p>
+        </div>
+    </li>
+    <li id="sense-of-community">
+        <Image class="icon" loading="eager" src={heartIcon} alt="An icon of a red heart shape with a black outline"/>
+        <div>
+            <h4>Entheogens promote empathy and kickstart positive life change</h4>
+            <p>
+                Research has demonstrated that entheogenic plants and fungi can enhance feelings of empathy, self-love,
+                and love for others<a href="#footnote-12"><sup>[12]</sup></a><a href="#footnote-13"><sup>[13]</sup></a>. Additionally, they have been shown to boost the brain's neuroplasticity, allowing
+                neural networks to adapt and grow more easily<a href="#footnote-14"><sup>[14]</sup></a><a href="#footnote-15"><sup>[15]</sup></a>. This increased neuroplasticity enables the brain to form
+                new connections that reinforce the positive transformations sparked by the experience, leading to lasting
+                change<a href="#footnote-16"><sup>[16]</sup></a>.
             </p>
         </div>
     </li>
     <li id="current-penalties">
-        <Image class="icon" src={flowerBehindBarsIcon} alt="An icon of an orange flower behind jail cell bars"/>
+        <Image class="icon" loading="eager" src={flowerBehindBarsIcon} alt="An icon of an orange flower behind jail cell bars"/>
         <div>
             <h4>Wisconsin law is incredibly harsh</h4>
             <p>
-                Under current Wisconsin criminal code, almost all entheogen-related crimes are felonies <a href="#footnote-4"><sup>[4]</sup></a>
+                Despite being non-violent, under current Wisconsin criminal code, almost all entheogen-related crimes are felonies
                 punishable by up to 3.5 years in prison, a fine of up to $10,000 or both<a href="#footnote-4"><sup>[4]</sup></a>.
                 For some entheogens such as mescaline, harvesting just 1 gram is punishable by up to 12.5 years in prison,
                 a fine of up to $25,000 or both<a href="#footnote-4"><sup>[4]</sup></a>. This is despite the fact that mescaline has been used
-                safely as a sacred medicine by indigenous cultures for thousands of years<a href="#footnote-5"><sup>[5]</sup></a>,
-                and has recently been found to be associated with self-reported psychiatric improvements and enduring positive
+                safely by indigenous cultures as a sacred medicine for thousands of years<a href="#footnote-5"><sup>[5]</sup></a>. In fact, mescaline
+                has recently been found to be associated with self-reported psychiatric improvements and enduring positive
                 life changes<a href="#footnote-6"><sup>[6]</sup></a>.
-
+            </p>
+        </div>
+    </li>
+    <li id="city-resources">
+        <Image class="icon" loading="eager" src={clockIcon} alt="An icon of a clock"/>
+        <div>
+            <h4>Our resources are better spent elsewhere</h4>
+            <p>
+                The City of Madison faces many pressing issues that require its attention. By diverting resources towards
+                the investigation, arrest, and prosecution of entheogen-related offenses, the city is forced to allocate
+                valuable time and funds away from more critical issues. Madison is facing a 2025 budget deficit<a href="#footnote-11"><sup>[11]</sup></a>.
+                Decriminalizing nature should be part of the solution.
             </p>
         </div>
     </li>
@@ -44,10 +82,6 @@ import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
 
 
 {/*
-    Community benefits
-    Current laws are incredibly harsh
-    Safe and non-addictive
-    Save city resources
     We do research here
 */}
 
@@ -62,7 +96,7 @@ import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
         [3] <a href="https://pubmed.ncbi.nlm.nih.gov/36001306/">Bogenschutz, Michael P et al. “Percentage of Heavy Drinking Days Following Psilocybin-Assisted Psychotherapy vs Placebo in the Treatment of Adult Patients With Alcohol Use Disorder: A Randomized Clinical Trial.” JAMA psychiatry vol. 79,10 (2022): 953-962. doi:10.1001/jamapsychiatry.2022.2096</a>
     </li>
     <li id="footnote-4">
-        [4] <a href="https://docs.google.com/spreadsheets/d/1yqqTTEAO4hdnxKM-GBU6Djz3KkvFSwGIZDgs3fNW7wk/edit?gid=0#gid=0">What are the current penalties for psychedelics?</a>
+        [4] <a href="https://docs.google.com/spreadsheets/d/1yqqTTEAO4hdnxKM-GBU6Djz3KkvFSwGIZDgs3fNW7wk/edit?gid=0#gid=0">“What Are the Current Criminal Penalties for Psychedelics?” Decriminalize Nature Madison.</a>
     </li>
     <li id="footnote-5">
         [5] <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(02)08701-9/fulltext">Bruhn JG, De Smet PA, El-Seedi HR, Beck O.. “Mescaline use for 5700 years”. Lancet. 2002;359(9320):1866.</a>
@@ -73,6 +107,33 @@ import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
     <li id="footnote-7">
         [7] <a href="https://pubmed.ncbi.nlm.nih.gov/33989464/">Zhdanava, Maryia et al. “The Prevalence and National Burden of Treatment-Resistant Depression and Major Depressive Disorder in the United States.” The Journal of clinical psychiatry vol. 82,2 20m13699. 16 Mar. 2021, doi:10.4088/JCP.20m13699</a>
     </li>
+    <li id="footnote-8">
+        [8] <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8905125/">Schlag, Anne K et al. “Adverse effects of psychedelics: From anecdotes and misinformation to systematic science.” Journal of psychopharmacology (Oxford, England) vol. 36,3 (2022): 258-272. doi:10.1177/02698811211069100</a>
+    </li>
+    <li id="footnote-9">
+        [9] <a href="https://jamanetwork.com/journals/jama/fullarticle/2808950">Johnson, Matthew W et al. “Pilot study of the 5-HT2AR agonist psilocybin in the treatment of tobacco addiction.” Journal of psychopharmacology (Oxford, England) vol. 28,11 (2014): 983-92. doi:10.1177/0269881114548296</a>
+    </li>
+    <li id="footnote-10">
+        [10] <a href="https://news.wisc.edu/two-first-in-kind-clinical-trials-explore-psilocybin-for-substance-misuse/">Gerhards, Katie. First-In-Kind Psychedelic Trials Treat Opioid and Methamphetamine Use Disorders. UW-Madison, 6 Jan. 2023.</a>
+    </li>
+    <li id="footnote-11">
+        [11] <a href="https://www.cityofmadison.com/finance/documents/budget/2025/CommunityBudgetConversations.pdf">2025 Budget Outlook Common Council Community Budget Conversations. City of Madison, 2024.</a>
+    </li>
+    <li id="footnote-12">
+        [12] <a href="https://akjournals.com/view/journals/2054/4/3/article-p163.xml">Blatchforde, E., Bright, S., and Engel, L. (2021). Tripping over the other: could psychedelics increase empathy? J. Psychedelic Stud. 4, 163–170. doi: 10.1556/2054.2020.00136</a>
+    </li>
+    <li id="footnote-13">
+        [13] <a href="https://promega.widencollective.com/portals/p7bigueo/ConsciousnessForum/playlist/e0ba027c-120f-438f-915c-6b55e702c65a/yeq3czdkhp/2024-Consciousness-Forum_Day-2_Adele-Lafrance.mp4">Lafrance, Adele. The Love Project: Preliminary Outcomes of a Survey Study among Psychedelic Users. 17 May 2024.</a>
+    </li>
+    <li id="footnote-14">
+        [14] <a href="https://www.science.org/doi/10.1126/science.adf0435">Maxemiliano V. Vargas et al. ,Psychedelics promote neuroplasticity through the activation of intracellular 5-HT2A receptors.Science379,700-706(2023).DOI:10.1126/science.adf0435</a>
+    </li>
+    <li id="footnote-15">
+        [15] <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351556/">Banks, Matthew I et al. “Catalysts for change: the cellular neurobiology of psychedelics.” Molecular biology of the cell vol. 32,12 (2021): 1135-1144. doi:10.1091/mbc.E20-05-0340</a>
+    </li>
+    <li id="footnote-16">
+        [16] <a href="https://www.nature.com/articles/s41386-022-01361-x">Knudsen, Gitte M. ‘Sustained Effects of Single Doses of Classical Psychedelics in Humans’. Neuropsychopharmacology, vol. 48, no. 1, Jan. 2023, pp. 145–150, https://doi.org10.1038/s41386-022-01361-x.</a>
+    </li>
 </ol>
 
 <style>
@@ -80,12 +141,21 @@ import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
         .icon {
            max-width: 5em;
            padding-right: 1%;
+           object-fit: contain;
+        }
+
+        .active-footnote {
+            background-color: #ffff0059;
         }
 
         #benefits {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        a[href^="#footnote"] {
+            text-decoration: none !important;
         }
 
         #benefits li {
@@ -107,3 +177,19 @@ import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
         }
     `}
 </style>
+
+<script>
+    {`
+        const footnoteLinkElements = Array.from(document.querySelectorAll('a[href^="#footnote"]'));
+        footnoteLinkElements.forEach(linkElement => {
+            const matchingFootnote = document.getElementById(linkElement.getAttribute("href").substring(1));
+            linkElement.addEventListener("click", event => {
+                const currentlyActiveFootnote = document.querySelector(".active-footnote");
+                if (currentlyActiveFootnote != null) {
+                    currentlyActiveFootnote.classList.remove("active-footnote");
+                }
+                matchingFootnote.classList.add("active-footnote");
+            });
+        });
+    `}
+</script>

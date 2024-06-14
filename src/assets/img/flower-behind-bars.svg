@@ -1,591 +1,114 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:cc="http://creativecommons.org/ns#"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    xmlns:ns1="http://sozi.baierouge.fr"
-    id="Layer_1"
-    xml:space="preserve"
-    viewBox="0 0 316.09375 320.97927"
-    version="1.1"
-    x="0px"
-    y="0px"
-    enable-background="new 0 0 452.001 427.571"
-  >
-<g
-      id="g5840"
-      stroke-linejoin="round"
-      transform="matrix(.396 0 0 .396 -145.84 46.142)"
-    ><path
-        id="path2195"
-        d="m796.81 295.5c-0.87575 0.0895-1.7925 0.40048-2.75 0.9375-6.2636 3.5128-1.1163 104.88-27.094 196.44-8.98-24.81-42.99-57.7-89.78-83.91-63.25-35.43-125.81-45.24-139.66-21.91s26.23 71.01 89.47 106.44c53.3 29.857 106.01 41.442 129.59 30.406-6.784 17.661-14.853 34.542-24.906 49.531-65.836 98.166-173.25 73.183-176.16 78.688-30.597 58.011 126.48 40.916 192.31-57.25 15.718-23.436 28.289-53.688 37.938-85.906 0.23459 0.41062 0.35958 0.88868 0.625 1.2812 15.197 22.477 75.42 6.5611 134.44-35.531 59.018-42.092 94.572-94.492 79.375-116.97-15.197-22.477-75.42-6.5611-134.44 35.531-29.571 21.091-53.265 44.762-67.625 65.969 17.148-84.216 15.734-165.5-1.3438-163.75z"
-        stroke="#12892d"
-        stroke-linecap="round"
-        stroke-width="17.005"
-        fill="#35e23e"
-    /><path
-        id="path1549"
-        d="m521.87 275.23c-43.016-29.588 2.1756-28.109-47.105-10.868-26.514 9.2766 3.6014 50.215 11.59 23.285 14.847-50.054 27.406-6.6172-4.2204-48.157-17.016-22.35-46.644 18.942-18.564 18.218 52.192-1.3472 14.762 24.02 44.496-18.895 15.998-23.09-32.429-38.508-23.062-12.026 17.409 49.221-18.282 21.462 31.721 36.479 26.903 8.0797 26.602-42.742 4.3102-25.65-41.432 31.768-26.061-10.755-24.892 41.441 0.62927 28.083 48.87 12.092 25.726-3.8269z"
-        transform="matrix(4.225 0 0 4.225 -1287.4 -859.24)"
-        stroke="#f58006"
-        stroke-width="4.0248"
-        fill="#fa9806"
-    /><path
-        id="path1551"
-        d="m539.81 261.93c0 4.8697-3.9477 8.8174-8.8174 8.8174s-8.8174-3.9477-8.8174-8.8174 3.9477-8.8174 8.8174-8.8174 8.8174 3.9477 8.8174 8.8174z"
-        transform="matrix(4.225 0 0 4.225 -1440.2 -885.76)"
-        stroke="#f58006"
-        stroke-width="4.0248"
-        fill="#fadc06"
-    /></g
-  ><g
-      id="g3"
-      transform="translate(-68.031 -60.5)"
-    >
-	<path
-        id="path3083"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="m217.85 381.13h166.23v-320.58h-316v320.58h149.76zm0-299.21v277.84h-23.17v-277.83h23.164zm12.768 277.84v-277.83h24.396v277.84h-24.396v0.001zm62.95-277.83v277.83h-25.79v-277.83h25.787zm12.768 277.84v-277.84h23.259v277.84h-23.259v0.001zm-124.42-277.84v277.83h-25.16v-277.83h25.156zm-37.924 0v277.83h-21.37v-277.83h21.363zm-34.131 0v277.83h-22.636v-277.83h22.627zm232.49 277.83v-277.83h22.563v277.84h-22.563v0.001zm-36.47-278.39v277.34h-9.575v-277.34h9.575z"
-    />
-	<path
-        id="path3085"
-        stroke-width="0"
-        fill="none"
-        d="m217.85 381.13h166.23v-320.58h-316v320.58h149.76zm0-299.21v277.84h-23.17v-277.83h23.164zm12.768 277.84v-277.83h24.396v277.84h-24.396v0.001zm62.95-277.83v277.83h-25.79v-277.83h25.787zm12.767 277.84v-277.84h23.26v277.84h-23.26v0.001zm-124.42-277.84v277.83h-25.16v-277.83h25.156zm-37.924 0v277.83h-21.37v-277.83h21.363zm-34.131 0v277.83h-22.636v-277.83h22.627zm232.49 277.83v-277.83h22.563v277.84h-22.563v0.001zm-36.47-278.39v277.34h-9.575v-277.34h9.575z"
-    />
-	<g
-        id="g3087"
-      >
-		<defs
-          id="defs3089"
-        >
-			<polygon
-            id="SVGID_691_"
-            points="341.92 83.482 332.34 83.482 332.34 360.82 341.92 360.82"
-        />
-		</defs
-      >
-		<clipPath
-          id="SVGID_692_"
-        >
-			<use
-            id="use3093"
-            xlink:href="#SVGID_691_"
-            height="427.57101"
-            width="452.00101"
-            y="0"
-            x="0"
-            overflow="visible"
-        />
-		</clipPath
-      >
-		<g
-          id="g3095"
-          clip-path="url(#SVGID_692_)"
-        >
-			<defs
-            id="defs3097"
-          >
-				<rect
-              id="SVGID_693_"
-              y="83.482"
-              x="332.34"
-              width="9.576"
-              height="277.34"
-          />
-			</defs
-        >
-			<clipPath
-            id="SVGID_694_"
-          >
-				<use
-              id="use3101"
-              xlink:href="#SVGID_693_"
-              height="427.57101"
-              width="452.00101"
-              y="0"
-              x="0"
-              overflow="visible"
-          />
-			</clipPath
-        >
-		</g
-      >
-	</g
-    >
-	<polygon
-        id="polygon3107"
-        stroke-width="0"
-        fill="none"
-        points="341.92 83.482 332.34 83.482 332.34 360.82 341.92 360.82"
-    />
-	<g
-        id="g3109"
-      >
-		<defs
-          id="defs3111"
-        >
-			<polygon
-            id="SVGID_695_"
-            points="267.02 81.367 257.45 81.367 257.45 358.7 267.02 358.7"
-        />
-		</defs
-      >
-		<clipPath
-          id="SVGID_696_"
-        >
-			<use
-            id="use3115"
-            xlink:href="#SVGID_695_"
-            height="427.57101"
-            width="452.00101"
-            y="0"
-            x="0"
-            overflow="visible"
-        />
-		</clipPath
-      >
-		<g
-          id="g3117"
-          clip-path="url(#SVGID_696_)"
-        >
-			<defs
-            id="defs3119"
-          >
-				<rect
-              id="SVGID_697_"
-              y="81.367"
-              x="257.45"
-              width="9.575"
-              height="277.34"
-          />
-			</defs
-        >
-			<clipPath
-            id="SVGID_698_"
-          >
-				<use
-              id="use3123"
-              xlink:href="#SVGID_697_"
-              height="427.57101"
-              width="452.00101"
-              y="0"
-              x="0"
-              overflow="visible"
-          />
-			</clipPath
-        >
-		</g
-      >
-	</g
-    >
-	<polygon
-        id="polygon3129"
-        stroke-width="0"
-        fill="none"
-        points="267.02 81.367 257.45 81.367 257.45 358.7 267.02 358.7"
-    />
-	<g
-        id="g3131"
-      >
-		<defs
-          id="defs3133"
-        >
-			<polygon
-            id="SVGID_699_"
-            points="230.05 81.367 220.47 81.367 220.47 358.7 230.05 358.7"
-        />
-		</defs
-      >
-		<clipPath
-          id="SVGID_700_"
-        >
-			<use
-            id="use3137"
-            xlink:href="#SVGID_699_"
-            height="427.57101"
-            width="452.00101"
-            y="0"
-            x="0"
-            overflow="visible"
-        />
-		</clipPath
-      >
-		<g
-          id="g3139"
-          clip-path="url(#SVGID_700_)"
-        >
-			<defs
-            id="defs3141"
-          >
-				<rect
-              id="SVGID_701_"
-              y="81.367"
-              x="220.47"
-              width="9.575"
-              height="277.34"
-          />
-			</defs
-        >
-			<clipPath
-            id="SVGID_702_"
-          >
-				<use
-              id="use3145"
-              xlink:href="#SVGID_701_"
-              height="427.57101"
-              width="452.00101"
-              y="0"
-              x="0"
-              overflow="visible"
-          />
-			</clipPath
-        >
-		</g
-      >
-	</g
-    >
-	<polygon
-        id="polygon3151"
-        stroke-width="0"
-        fill="none"
-        points="230.05 81.367 220.47 81.367 220.47 358.7 230.05 358.7"
-    />
-	<g
-        id="g3153"
-      >
-		<defs
-          id="defs3155"
-        >
-			<polygon
-            id="SVGID_703_"
-            points="194.02 81.367 184.44 81.367 184.44 358.7 194.02 358.7"
-        />
-		</defs
-      >
-		<clipPath
-          id="SVGID_704_"
-        >
-			<use
-            id="use3159"
-            xlink:href="#SVGID_703_"
-            height="427.57101"
-            width="452.00101"
-            y="0"
-            x="0"
-            overflow="visible"
-        />
-		</clipPath
-      >
-		<g
-          id="g3161"
-          clip-path="url(#SVGID_704_)"
-        >
-			<defs
-            id="defs3163"
-          >
-				<rect
-              id="SVGID_705_"
-              y="81.367"
-              x="184.44"
-              width="9.575"
-              height="277.34"
-          />
-			</defs
-        >
-			<clipPath
-            id="SVGID_706_"
-          >
-				<use
-              id="use3167"
-              xlink:href="#SVGID_705_"
-              height="427.57101"
-              width="452.00101"
-              y="0"
-              x="0"
-              overflow="visible"
-          />
-			</clipPath
-        >
-		</g
-      >
-	</g
-    >
-	<polygon
-        id="polygon3173"
-        stroke-width="0"
-        fill="none"
-        points="194.02 81.367 184.44 81.367 184.44 358.7 194.02 358.7"
-    />
-	<g
-        id="g3175"
-      >
-		<defs
-          id="defs3177"
-        >
-			<polygon
-            id="SVGID_707_"
-            points="156.1 82.425 146.52 82.425 146.52 359.76 156.1 359.76"
-        />
-		</defs
-      >
-		<clipPath
-          id="SVGID_708_"
-        >
-			<use
-            id="use3181"
-            xlink:href="#SVGID_707_"
-            height="427.57101"
-            width="452.00101"
-            y="0"
-            x="0"
-            overflow="visible"
-        />
-		</clipPath
-      >
-		<g
-          id="g3183"
-          clip-path="url(#SVGID_708_)"
-        >
-			<defs
-            id="defs3185"
-          >
-				<rect
-              id="SVGID_709_"
-              y="82.425"
-              x="146.52"
-              width="9.576"
-              height="277.34"
-          />
-			</defs
-        >
-			<clipPath
-            id="SVGID_710_"
-          >
-				<use
-              id="use3189"
-              xlink:href="#SVGID_709_"
-              height="427.57101"
-              width="452.00101"
-              y="0"
-              x="0"
-              overflow="visible"
-          />
-			</clipPath
-        >
-		</g
-      >
-	</g
-    >
-	<polygon
-        id="polygon3195"
-        stroke-width="0"
-        fill="none"
-        points="156.1 82.425 146.52 82.425 146.52 359.76 156.1 359.76"
-    />
-	<g
-        id="g3197"
-      >
-		<defs
-          id="defs3199"
-        >
-			<polygon
-            id="SVGID_711_"
-            points="121.96 81.367 112.39 81.367 112.39 358.7 121.96 358.7"
-        />
-		</defs
-      >
-		<clipPath
-          id="SVGID_712_"
-        >
-			<use
-            id="use3203"
-            xlink:href="#SVGID_711_"
-            height="427.57101"
-            width="452.00101"
-            y="0"
-            x="0"
-            overflow="visible"
-        />
-		</clipPath
-      >
-		<g
-          id="g3205"
-          clip-path="url(#SVGID_712_)"
-        >
-			<defs
-            id="defs3207"
-          >
-				<rect
-              id="SVGID_713_"
-              y="81.367"
-              x="112.39"
-              width="9.575"
-              height="277.34"
-          />
-			</defs
-        >
-			<clipPath
-            id="SVGID_714_"
-          >
-				<use
-              id="use3211"
-              xlink:href="#SVGID_713_"
-              height="427.57101"
-              width="452.00101"
-              y="0"
-              x="0"
-              overflow="visible"
-          />
-			</clipPath
-        >
-		</g
-      >
-	</g
-    >
-	<polygon
-        id="polygon3217"
-        stroke-width="0"
-        fill="none"
-        points="121.96 81.367 112.39 81.367 112.39 358.7 121.96 358.7"
-    />
-	<g
-        id="g3219"
-      >
-		<defs
-          id="defs3221"
-        >
-			<polygon
-            id="SVGID_715_"
-            points="305.89 81.367 296.32 81.367 296.32 358.7 305.89 358.7"
-        />
-		</defs
-      >
-		<clipPath
-          id="SVGID_716_"
-        >
-			<use
-            id="use3225"
-            xlink:href="#SVGID_715_"
-            height="427.57101"
-            width="452.00101"
-            y="0"
-            x="0"
-            overflow="visible"
-        />
-		</clipPath
-      >
-		<g
-          id="g3227"
-          clip-path="url(#SVGID_716_)"
-        >
-			<defs
-            id="defs3229"
-          >
-				<rect
-              id="SVGID_717_"
-              y="81.367"
-              x="296.32"
-              width="9.575"
-              height="277.34"
-          />
-			</defs
-        >
-			<clipPath
-            id="SVGID_718_"
-          >
-				<use
-              id="use3233"
-              xlink:href="#SVGID_717_"
-              height="427.57101"
-              width="452.00101"
-              y="0"
-              x="0"
-              overflow="visible"
-          />
-			</clipPath
-        >
-		</g
-      >
-	</g
-    >
-	<polygon
-        id="polygon3239"
-        stroke-width="0"
-        fill="none"
-        points="305.89 81.367 296.32 81.367 296.32 358.7 305.89 358.7"
-    />
-</g
-  >
-<metadata
-    ><rdf:RDF
-      ><cc:Work
-        ><dc:format
-          >image/svg+xml</dc:format
-        ><dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
-        /><cc:license
-            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
-        /><dc:publisher
-          ><cc:Agent
-              rdf:about="http://openclipart.org/"
-            ><dc:title
-              >Openclipart</dc:title
-            ></cc:Agent
-          ></dc:publisher
-        ><dc:title
-          >Flower Behind Bars</dc:title
-        ><dc:date
-          >2013-04-20T21:27:09</dc:date
-        ><dc:description
-          >Flower grows behind prison bars.</dc:description
-        ><dc:source
-          >https://openclipart.org/detail/177326/flower-behind-bars-by-kingofmock-177326</dc:source
-        ><dc:creator
-          ><cc:Agent
-            ><dc:title
-              >KingOfMock</dc:title
-            ></cc:Agent
-          ></dc:creator
-        ><dc:subject
-          ><rdf:Bag
-            ><rdf:li
-              >bars</rdf:li
-            ><rdf:li
-              >difficult time</rdf:li
-            ><rdf:li
-              >flower</rdf:li
-            ><rdf:li
-              >hope</rdf:li
-            ><rdf:li
-              >irony</rdf:li
-            ><rdf:li
-              >jail</rdf:li
-            ><rdf:li
-              >lies</rdf:li
-            ><rdf:li
-              >prison</rdf:li
-            ><rdf:li
-              >sarcasm</rdf:li
-            ></rdf:Bag
-          ></dc:subject
-        ></cc:Work
-      ><cc:License
-          rdf:about="http://creativecommons.org/licenses/publicdomain/"
-        ><cc:permits
-            rdf:resource="http://creativecommons.org/ns#Reproduction"
-        /><cc:permits
-            rdf:resource="http://creativecommons.org/ns#Distribution"
-        /><cc:permits
-            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
-        /></cc:License
-      ></rdf:RDF
-    ></metadata
-  ></svg
->
+   xml:space="preserve"
+   viewBox="0 0 316.094 320.979"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="flower-behind-bars.CgItdyDG_2tC5wC.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs6" /><sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.8086375"
+     inkscape:cx="191.02778"
+     inkscape:cy="108.64532"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" /><g
+     stroke-linejoin="round"
+     stroke-width="6.734"
+     id="g3"><path
+       fill="#35e23e"
+       stroke="#12892d"
+       stroke-linecap="round"
+       d="M169.697 163.16q-.52.053-1.09.371c-2.48 1.391-.441 41.533-10.728 77.79-3.557-9.824-17.025-22.849-35.553-33.228-25.047-14.03-49.821-17.915-55.306-8.676s10.387 28.12 35.43 42.15c21.107 11.823 41.98 16.411 51.318 12.04-2.686 6.995-5.882 13.68-9.863 19.615-26.07 38.874-68.607 28.98-69.76 31.16-12.115 22.973 50.087 16.203 76.156-22.67 6.224-9.281 11.202-21.26 15.023-34.02.093.163.143.353.248.508 6.018 8.901 29.866 2.598 53.238-14.07 23.371-16.669 37.45-37.419 31.432-46.32s-29.866-2.599-53.238 14.07c-11.71 8.352-21.093 17.726-26.78 26.124 6.791-33.35 6.231-65.538-.532-64.845z"
+       id="path1" /><path
+       fill="#fa9806"
+       stroke="#f58006"
+       d="M217.49 166.37c-71.97-49.503 3.64-47.029-78.811-18.183-44.36 15.52 6.025 84.015 19.391 38.958 24.84-83.745 45.853-11.071-7.061-80.571-28.47-37.394-78.04 31.692-31.06 30.48 87.323-2.254 24.699 40.188 74.447-31.613 26.766-38.632-54.257-64.428-38.585-20.12 29.127 82.35-30.588 35.907 53.072 61.032 45.012 13.518 44.508-71.511 7.212-42.915-69.32 53.151-43.603-17.994-41.647 69.335 1.053 46.986 81.764 20.231 43.042-6.403z"
+       id="path2" /><path
+       fill="#fadc06"
+       stroke="#f58006"
+       d="M186.997 133.616c0 8.148-6.605 14.753-14.752 14.753s-14.753-6.605-14.753-14.753 6.605-14.752 14.753-14.752 14.752 6.605 14.752 14.752z"
+       id="path3" /></g><path
+     fill-rule="evenodd"
+     d="M149.819 320.63h166.23V.05h-316v320.58h149.76zm0-299.21v277.84h-23.17V21.43h23.164zm12.768 277.84V21.43h24.396v277.84h-24.396v.001zm62.95-277.83v277.83h-25.79V21.43h25.787zm12.768 277.84V21.43h23.259v277.84zM113.885 21.43v277.83h-25.16V21.43h25.156zm-37.924 0v277.83h-21.37V21.43h21.363zm-34.131 0v277.83H19.194V21.43h22.627zm232.49 277.83V21.43h22.563v277.84H274.32v.001zM237.85 20.87v277.34h-9.575V20.87z"
+     clip-rule="evenodd"
+     id="path4" /><path
+     fill="none"
+     d="M149.819 320.63h166.23V.05h-316v320.58h149.76zm0-299.21v277.84h-23.17V21.43h23.164zm12.768 277.84V21.43h24.396v277.84h-24.396v.001zm62.95-277.83v277.83h-25.79V21.43h25.787zm12.767 277.84V21.43h23.26v277.84zM113.884 21.43v277.83h-25.16V21.43h25.156zm-37.924 0v277.83H54.59V21.43h21.363zm-34.131 0v277.83H19.193V21.43H41.82zm232.49 277.83V21.43h22.563v277.84h-22.563v.001zm-36.47-278.39v277.34h-9.575V20.87z"
+     id="path5" /><path
+     fill="none"
+     d="M273.889 22.982h-9.58V300.32h9.58zm-74.9-2.115h-9.57V298.2h9.57zm-36.97 0h-9.58V298.2h9.58zm-36.03 0h-9.58V298.2h9.58zm-37.92 1.058h-9.58V299.26h9.58zm-34.14-1.058h-9.57V298.2h9.57zm183.93 0h-9.57V298.2h9.57z"
+     id="path6" /><path
+     style="fill:#ffffff;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 235.55402,95.10769 c -0.969,-0.444679 -2.94481,-0.892549 -4.39831,-0.996994 l -2.63899,-0.189632 V 57.418739 20.916415 h 4.49605 4.49605 v 37.532259 c 0,20.642742 -0.044,37.517433 -0.0977,37.499316 -0.0538,-0.01812 -0.88943,-0.396255 -1.85706,-0.8403 z"
+     id="path7" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 235.55402,95.10769 c -0.969,-0.444679 -2.94481,-0.892549 -4.39831,-0.996994 l -2.63899,-0.189632 V 57.418739 20.916415 h 4.49605 4.49605 v 37.532259 c 0,20.642742 -0.044,37.517433 -0.0977,37.499316 -0.0538,-0.01812 -0.88943,-0.396255 -1.85706,-0.8403 z"
+     id="path8" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 228.51672,121.21167 v -20.14824 h 1.63589 c 2.2487,0 4.85639,1.35794 6.21846,3.23823 l 1.13775,1.57062 v 12.11051 12.1105 l -1.2097,2.39413 c -1.43745,2.84486 -2.58804,4.41894 -4.78549,6.54687 -3.28297,3.17911 -2.99691,4.88031 -2.99691,-17.82262 z"
+     id="path9" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 229.08107,140.12941 c -0.19102,-0.30598 -0.4169,-9.23489 -0.50196,-19.84203 l -0.15466,-19.2857 1.9032,0.26858 c 2.47672,0.34952 4.96893,1.80156 6.19896,3.61171 l 0.98221,1.44546 v 11.67864 11.67865 l -1.46457,2.7939 c -1.78324,3.40179 -6.42905,8.50637 -6.96318,7.65079 z"
+     id="path10" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 235.97465,103.7419 c -1.65254,-1.92068 -3.02476,-2.65331 -5.52414,-2.94932 l -1.93379,-0.22903 v -3.125763 -3.125764 l 2.64529,0.18927 c 1.4549,0.104098 3.47813,0.557676 4.49605,1.007951 l 1.85076,0.818682 v 4.518034 c 0,2.48492 -0.044,4.50314 -0.0977,4.48494 -0.0538,-0.0182 -0.70015,-0.73325 -1.43643,-1.589 z"
+     id="path11" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 236.33935,95.201598 c -0.67961,-0.420584 -3.31968,-1.027996 -5.96556,-1.372527 l -1.85707,-0.241817 V 57.251835 20.916415 h 4.49605 4.49605 L 237.453,38.21644 c -0.0307,9.515014 -0.16265,26.310364 -0.29322,37.323001 -0.20876,17.607481 -0.30773,19.97945 -0.82043,19.662157 z"
+     id="path12" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d=""
+     id="path13" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 229.07766,140.12941 c -0.19289,-0.30598 -0.41791,-9.24396 -0.50003,-19.86217 l -0.14932,-19.30585 1.90127,0.27712 c 2.46612,0.35946 4.96305,1.82749 6.19703,3.64346 l 0.98221,1.44546 v 11.67864 11.67865 l -1.46457,2.7939 c -1.78627,3.40756 -6.42799,8.50516 -6.96659,7.65079 z"
+     id="path14" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 228.51672,145.44984 v -3.31083 l 3.06477,-3.04229 c 1.75553,-1.74264 3.67363,-4.12788 4.49003,-5.58353 l 1.42525,-2.54125 0.006,5.68364 0.006,5.68363 -1.85706,1.81903 c -1.69372,1.65902 -6.05458,4.60243 -6.81882,4.60243 -0.17392,0 -0.31622,-1.48987 -0.31622,-3.31083 z"
+     id="path15" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 231.27256,178.80328 c -0.26496,-1.34675 -0.99341,-3.46226 -1.61879,-4.70113 l -1.13705,-2.25248 v -11.34902 c 0,-9.03743 0.10327,-11.34902 0.50704,-11.34902 0.70179,0 5.66872,-3.2984 7.21444,-4.79091 l 1.27062,-1.22689 v 18.59684 18.59685 l -2.37216,0.26838 c -1.30469,0.14761 -2.59946,0.3556 -2.87726,0.4622 -0.35263,0.13532 -0.65051,-0.54531 -0.98684,-2.25482 z"
+     id="path16" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 228.543,264.58288 0.0263,-33.52491 2.41723,-2.04582 c 1.32948,-1.12519 3.34088,-2.86334 4.46978,-3.86255 l 2.05254,-1.81675 v 37.38747 37.38746 h -4.49605 -4.49605 z"
+     id="path17" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:1.333;stroke-opacity:0"
+     d="m 228.51672,205.71327 c 0,-12.16872 0.11246,-15.89889 0.4887,-16.20983 0.53074,-0.43862 4.18325,-1.42273 6.84182,-1.84343 l 1.66158,-0.26293 -0.004,12.64286 -0.004,12.64286 -3.08942,3.34803 c -1.69919,1.84142 -3.72081,3.82962 -4.4925,4.41821 l -1.40307,1.07018 z"
+     id="path18" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.521151;stroke-opacity:0"
+     d="m 228.65191,294.88236 c 0.1381,-1.77399 0.25214,-16.86412 0.25343,-33.53362 l 0.002,-30.3082 2.99849,-2.53253 c 1.64916,-1.3929 3.58442,-3.02916 4.30057,-3.63614 l 1.30208,-1.10361 v 37.16976 37.16976 h -4.55399 -4.554 z"
+     id="path19" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.130288;stroke-opacity:0"
+     d="m 228.27237,226.67909 v -4.34333 l 1.53941,-1.41924 c 1.89422,-1.74637 5.23892,-5.13771 6.84258,-6.93802 l 1.19656,-1.34328 v 4.87342 4.87341 l -1.39481,1.35688 c -2.35883,2.2947 -6.84827,6.31545 -7.91495,7.08865 l -0.26879,0.19483 z"
+     id="path20" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.130288;stroke-opacity:0"
+     d="m 228.38894,264.22212 c -0.0103,-18.20706 0.0142,-33.12414 0.0545,-33.14906 0.0665,-0.0411 0.0594,64.2911 -0.007,65.66636 -0.0156,0.32254 -0.0369,-14.31024 -0.0473,-32.5173 z"
+     id="path21" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.130288;stroke-opacity:0"
+     d="m 228.51034,233.4526 c 0,-1.3708 0.0137,-1.93159 0.0305,-1.24618 0.0168,0.6854 0.0168,1.80697 0,2.49237 -0.0168,0.68541 -0.0305,0.12462 -0.0305,-1.24619 z"
+     id="path22" /><path
+     style="fill:#000000;stroke:#fed03c;stroke-width:0.130288;stroke-opacity:0"
+     d=""
+     id="path23" /><rect
+     style="fill:#000000;stroke:#fed03c;stroke-width:1.333;stroke-opacity:0"
+     id="rect23"
+     width="11.61095"
+     height="290.82666"
+     x="226.13707"
+     y="17.692877" /></svg>
