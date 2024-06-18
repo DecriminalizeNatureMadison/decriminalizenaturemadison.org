@@ -100,7 +100,7 @@ import heartIcon from "../assets/img/heart.svg"
     />
     <Footnote
         index={3}
-        href="https://pubmed.ncbi.nlm.nih.gov/36001306/"
+        href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8542741/"
         citation="Bogenschutz, Michael P et al. “Percentage of Heavy Drinking Days Following Psilocybin-Assisted Psychotherapy vs Placebo in the Treatment of Adult Patients With Alcohol Use Disorder: A Randomized Clinical Trial.” JAMA psychiatry vol. 79,10 (2022): 953-962. doi:10.1001/jamapsychiatry.2022.2096"
     />
     <Footnote
@@ -120,7 +120,7 @@ import heartIcon from "../assets/img/heart.svg"
     />
     <Footnote
         index={7}
-        href="https://pubmed.ncbi.nlm.nih.gov/33989464/"
+        href="https://www.psychiatrist.com/jcp/prevalence-national-burden-treatment-resistant-depression-major-depressive-disorder-in-us/"
         citation="Zhdanava, Maryia et al. “The Prevalence and National Burden of Treatment-Resistant Depression and Major Depressive Disorder in the United States.” The Journal of clinical psychiatry vol. 82,2 20m13699. 16 Mar. 2021, doi:10.4088/JCP.20m13699"
     />
     <Footnote
@@ -197,16 +197,18 @@ import heartIcon from "../assets/img/heart.svg"
 
 <script>
     {`
-        const footnoteLinkElements = Array.from(document.querySelectorAll('a[href^="#footnote"]'));
-        footnoteLinkElements.forEach(linkElement => {
-            const matchingFootnote = document.getElementById(linkElement.getAttribute("href").substring(1));
-            linkElement.addEventListener("click", event => {
-                const currentlyActiveFootnote = document.querySelector(".active-footnote");
-                if (currentlyActiveFootnote != null) {
-                    currentlyActiveFootnote.classList.remove("active-footnote");
-                }
-                matchingFootnote.classList.add("active-footnote");
+        (function() {
+            const footnoteLinkElements = Array.from(document.querySelectorAll('a[href^="#footnote"]'));
+            footnoteLinkElements.forEach(linkElement => {
+                const matchingFootnote = document.getElementById(linkElement.getAttribute("href").substring(1));
+                linkElement.addEventListener("click", event => {
+                    const currentlyActiveFootnote = document.querySelector(".active-footnote");
+                    if (currentlyActiveFootnote != null) {
+                        currentlyActiveFootnote.classList.remove("active-footnote");
+                    }
+                    matchingFootnote.classList.add("active-footnote");
+                });
             });
-        });
+        })();
     `}
 </script>
