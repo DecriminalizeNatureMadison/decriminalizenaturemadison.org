@@ -74,7 +74,7 @@ import heartIcon from "../assets/img/heart.svg"
             <p>
                 The City of Madison faces many pressing issues that require its attention. By diverting resources towards
                 the investigation, arrest, and prosecution of entheogen-related offenses, the city is forced to allocate
-                valuable time and funds away from more critical issues. Madison is facing a 2025 budget deficit<a href="#footnote-11"><sup>[11]</sup></a>.
+                valuable time and funds away from more critical issues. Madison is facing a 2025 budget deficit<FootnoteReference index={11} />.
                 Decriminalizing nature should be part of the solution.
             </p>
         </div>
@@ -196,19 +196,19 @@ import heartIcon from "../assets/img/heart.svg"
 </style>
 
 <script>
-    {`
-        (function() {
-            const footnoteLinkElements = Array.from(document.querySelectorAll('a[href^="#footnote"]'));
-            footnoteLinkElements.forEach(linkElement => {
-                const matchingFootnote = document.getElementById(linkElement.getAttribute("href").substring(1));
-                linkElement.addEventListener("click", event => {
-                    const currentlyActiveFootnote = document.querySelector(".active-footnote");
-                    if (currentlyActiveFootnote != null) {
-                        currentlyActiveFootnote.classList.remove("active-footnote");
-                    }
-                    matchingFootnote.classList.add("active-footnote");
-                });
-            });
-        })();
+    {`        (function() {
+                  const footnoteLinkElements = Array.from(document.querySelectorAll('a[href^="#footnote"]'));
+                  footnoteLinkElements.forEach(linkElement => {
+                      const matchingFootnote = document.getElementById(linkElement.getAttribute("href").substring(1));
+                      linkElement.addEventListener("click", event => {
+                          const currentlyActiveFootnote = document.querySelector(".active-footnote");
+                          if (currentlyActiveFootnote != null) {
+                              currentlyActiveFootnote.classList.remove("active-footnote");
+                          }
+                          matchingFootnote.classList.add("active-footnote");
+                      });
+                  });
+              })();
+
     `}
 </script>
