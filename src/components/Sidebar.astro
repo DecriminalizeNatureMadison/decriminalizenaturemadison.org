@@ -5,7 +5,7 @@ const { image, alt, heading, description } = Astro.props;
 ---
 
 <aside class="bg-white max-w-md">
-    <Image src={image} alt={alt}/>
+    <Image loading="eager" src={image} alt={alt}/>
     <div class="sidebar-content">
         <slot>
             <h4 class="sidebar-header">{heading}</h4>

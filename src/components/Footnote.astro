@@ -5,3 +5,9 @@ const { href, index, citation } = Astro.props;
 <li id=`footnote-${index}` class="pb-4">
     <span>[{index}]</span> <a href={href}>{citation}</a>
 </li>
+
+<style>
+    li:target {
+        background-color: #ffff0059;
+    }
+</style>

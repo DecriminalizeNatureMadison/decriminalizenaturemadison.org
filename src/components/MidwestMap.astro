@@ -1,0 +1,139 @@
+---
+---
+<div class="flex flex-row flex-wrap gap-5">
+  <object class="map max-w-lg" data="/img/midwest-map.svg" type="image/svg+xml">A Map of Wisconsin and neighboring states. There are flowers around the map designating points of interest.</object>
+  <div class="md:border-2 lg:border-2 border-black py-1 px-2 flex-shrink max-w-lg">
+    <div data-flower-id="Southeast Michigan" aria-hidden="false" class="flower-info-container">
+      <h3>Southeast Michigan</h3>
+      <p>
+        Southeast Michigan has so many areas which have decriminalized nature that we had to group them into one large
+        flower! Here's the list:
+      </p>
+      <ol class="list-decimal list-inside ml-2">
+        <li>
+          The City of Ann Arbor decriminalized nature in September of 2020 through
+          <a href="/resolutions/michigan/ann-arbor.pdf">a resolution passed by their City Council</a>.
+        </li>
+        <li>
+          In January 2021, the Washtenaw County Prosecutor's Office published
+          <a href="/resolutions/michigan/washtenaw-county.pdf">an official policy</a> that it will no longer pursue
+          criminal charges for the use, possession or cultivation of entheogenic plants and fungi.
+        </li>
+        <li>
+          Voters in the City of Detroit voted to decriminalize nature in November of 2021 through
+          <a href="/resolutions/michigan/detroit.pdf">a ballot initiative called "Proposal E"</a>.
+        </li>
+        <li>
+          The City of Hazel Park decriminalized nature in March of 2022 through
+          <a href="/resolutions/michigan/hazel-park.pdf">a resolution passed by their City Council</a>.
+        </li>
+        <li>
+          The City of Ferndale decriminalized nature in February of 2023 through
+          <a href="/resolutions/michigan/ferndale.pdf">a resolution passed by their City Council</a>.
+        </li>
+        <li>
+          The City of Ypsilanti decriminalized nature in January of 2024 through
+          <a href="/resolutions/michigan/ypsilanti.pdf">a resolution passed by their City Council</a>.
+        </li>
+      </ol>
+    </div>
+    <div data-flower-id="Minneapolis" aria-hidden="true" class="flower-info-container hidden">
+      <h3>Minneapolis</h3>
+      <p>
+        In July of 2023, the Mayor of Minneapolis issued <a href="/resolutions/minnesota/minneapolis.pdf">an executive order</a> decriminalizing the
+        use, possession, and growth of entheogenic plants and fungi.
+      </p>
+      <p class="pt-4">
+        On the state level, Minnesota's legislature has created a
+        <a href="https://www2cdn.web.health.state.mn.us/people/psychmed/index.html">"Psychedelic Medicine Task Force"</a>
+        within its Department of Health. This task fork is responsible for investigating psychedelic medicine and advising
+        the legislature on statewide legalization of entheogenic plants and fungi.
+      </p>
+    </div>
+    <div data-flower-id="Minnesota" aria-hidden="true" class="flower-info-container hidden">
+      <h3>Minnesota</h3>
+      <p>
+        Minnesota's state legislature has created a <a href="https://www2cdn.web.health.state.mn.us/people/psychmed/index.html">"Psychedelic Medicine Task Force"</a>
+        within its Department of Health. This task force is responsible for investigating psychedelic medicine and advising
+        the legislature on statewide legalization of entheogenic plants and fungi.
+      </p>
+    </div>
+    <div data-flower-id="Grand Rapids" aria-hidden="true" class="flower-info-container hidden">
+      <h3>Grand Rapids</h3>
+      <p>
+        In September of 2021, the Grand Rapids City Commission passed <a href="/resolutions/michigan/grand-rapids.pdf">a resolution</a>
+        which did not decriminalize nature but instead declared that the Mayor and City Commission support efforts to decriminalize
+        nature at the local, state and federal level.
+      </p>
+    </div>
+    <div data-flower-id="Illinois" aria-hidden="true" class="flower-info-container hidden">
+      <h3>Illinois</h3>
+      <p>
+        In January of 2023, Illinois State Representative La Shawn K. Ford introduced the
+        <a href="https://www.ilga.gov/legislation/BillStatus.asp?DocNum=1&GAID=17&DocTypeID=HB&SessionID=112&GA=103">CURE Act</a>
+        which would establish a "Psilocybin Advisory Board" within its Department of Public Health. This board would advise
+        the department on providing psilocybin services (like psilocybin assisted therapy).
+      </p>
+      <p class="pt-4">
+        The act would also effectively decriminalize psilocybin through an annual expungement process. Since being introduced, it
+        has accumulated sponsorship from ten additional representatives!
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .flower-info-container > h3 {
+      margin-bottom: 0.75rem;
+  }
+</style>
+
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const mapObject = document.querySelector('.map') as HTMLObjectElement;
+    // TODO: fix the need for this
+    if (mapObject == null) {
+      return;
+    }
+    // for some reason the load event is inconsistent in Chrome - maybe not actually, see todo above
+    const intervalId = setInterval(() => {
+      const mapDocument = mapObject.contentDocument;
+      const flowerElements = mapDocument.querySelectorAll('[data-flower-id]');
+      if (flowerElements.length == 0) {
+        return;
+      }
+      for (let flowerElement of flowerElements) {
+        const flowerID = flowerElement.getAttribute("data-flower-id");
+        const escapedFlowerId = CSS.escape(flowerID);
+        flowerElement.setAttribute("aria-label", flowerID);
+        const activeFlowerInfoContainer = document.querySelector(".flower-info-container[aria-hidden='false']");
+        const isFlowerElementActive = activeFlowerInfoContainer.getAttribute("data-flower-id") === flowerID;
+        flowerElement.setAttribute("aria-pressed", `${isFlowerElementActive}`);
+        flowerElement.setAttribute("role", "button");
+        flowerElement.setAttribute("tabindex", "0");
+        flowerElement.setAttribute("title", flowerID);
+        const matchingFlowerInfoContainer = document.querySelector(`.flower-info-container[data-flower-id="${escapedFlowerId}"]`);
+        flowerElement.addEventListener('click', () => {
+          for (const currentFlowerElement of flowerElements) {
+            if (currentFlowerElement.getAttribute("data-flower-id") != flowerID) {
+              currentFlowerElement.setAttribute("aria-pressed", "false");
+            }
+          }
+          flowerElement.setAttribute("aria-pressed", "true");
+          for (const flowerInfoContainer of document.querySelectorAll('.flower-info-container')) {
+            if (flowerInfoContainer != matchingFlowerInfoContainer) {
+              flowerInfoContainer.classList.add("hidden");
+              flowerInfoContainer.setAttribute("aria-hidden", "true");
+            }
+          }
+
+          matchingFlowerInfoContainer.classList.remove("hidden");
+          matchingFlowerInfoContainer.setAttribute("aria-hidden", "false");
+          matchingFlowerInfoContainer.scrollIntoView( {block: "start", behavior: "smooth"});
+        });
+      }
+      clearInterval(intervalId);
+    }, 100);
+  });
+</script>

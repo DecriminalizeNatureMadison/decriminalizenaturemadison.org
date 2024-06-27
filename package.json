@@ -5,7 +5,7 @@
   "author": "Mark Teekman",
   "homepage": "https://accessible-astro.netlify.app/",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "@iconify-json/pajamas": "^1.1.45",
-    "astro-imagetools": "^0.9.0"
+    "openpgp": "^5.11.2"
   }
 }
