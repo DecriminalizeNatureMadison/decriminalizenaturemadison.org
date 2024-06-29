@@ -32,16 +32,26 @@ const { showImage = true } = Astro.props;
   }
 </style>)}
 
+<script is:inline>
+  (function() {
+    const mainNavContainer = document.getElementById("main-navigation");
+    mainNavContainer.classList.remove("is-desktop");
+    mainNavContainer.classList.add("invisible");
+    document.querySelector(".mobile-menu").classList.add("hidden");
+    document.querySelector(".desktop-menu").classList.add("hidden");
+  })();
+</script>
+
 <script>
   document.addEventListener('astro:page-load', () => {
     // variables
-    const mainNav = document.querySelector('#main-navigation')
-    const mainMenu = mainNav.querySelector('ul')
+    const mainNavContainer = document.querySelector('#main-navigation')
+    const mainMenu = mainNavContainer.querySelector('ul')
     const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
 
     // functions
     const setActiveMenuItem = () => {
-      const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
+      const mobileDesktopMenus = mainNavContainer.querySelectorAll('nav > ul')
       const currenPathname = window.location.pathname
 
       mobileDesktopMenus.forEach((menu) => {
@@ -60,17 +70,21 @@ const { showImage = true } = Astro.props;
     }
 
     const checkMenuSize = () => {
-      const mainNavWidth = mainNav.getBoundingClientRect().width
+      mainNavContainer.classList.remove("invisible");
+      document.querySelector(".mobile-menu").classList.remove("hidden");
+      document.querySelector(".desktop-menu").classList.remove("hidden");
+
+      const mainNavWidth = mainNavContainer.getBoundingClientRect().width
       const desktopMenuWidth = document.querySelector('.desktop-menu').getBoundingClientRect().width
       const logoWidthBuffer = 300
       const totalMenuWidth = Math.round(desktopMenuWidth) + logoWidthBuffer
 
       if (totalMenuWidth >= mainNavWidth) {
-        mainNav.classList.remove('is-desktop')
-        mainNav.classList.add('is-mobile')
+        mainNavContainer.classList.remove('is-desktop')
+        mainNavContainer.classList.add('is-mobile')
       } else if (totalMenuWidth <= mainNavWidth) {
-        mainNav.classList.add('is-desktop')
-        mainNav.classList.remove('is-mobile')
+        mainNavContainer.classList.add('is-desktop')
+        mainNavContainer.classList.remove('is-mobile')
       }
     }
 
