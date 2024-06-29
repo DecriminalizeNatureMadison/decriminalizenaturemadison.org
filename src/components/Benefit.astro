@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+const { icon, alt, heading, id } = Astro.props;
+---
+
+<li id={id}>
+  <div class="flex flex-col gap-2 md:lg:hidden">
+    <div class="flex flex-row">
+      <Image class="icon max-w-16 pr-3 object-contain" loading="eager" src={icon} alt={alt}/>
+      <div class="flex justify-center items-center">
+        <h4>{heading}</h4>
+      </div>
+    </div>
+    <div>
+      <slot />
+    </div>
+  </div>
+  <div class="flex-row hidden md:lg:flex">
+    <div class="flex">
+      <Image class="icon max-w-20 pr-3 object-contain" loading="eager" src={icon} alt={alt}/>
+    </div>
+    <div>
+      <div>
+        <h4>{heading}</h4>
+      </div>
+      <div>
+        <slot />
+      </div>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,80 @@
+---
+import FootnoteReference from './FootnoteReference.astro'
+import Benefit from './Benefit.astro'
+import brainIcon from "../assets/img/brain.svg"
+import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
+import mushroomIcon from "../assets/img/mushrooms.svg"
+import clockIcon from "../assets/img/clock.svg"
+import heartIcon from "../assets/img/heart.svg"
+---
+<ul id="benefits" class="flex flex-col justify-between my-5 gap-5">
+  <Benefit
+    heading="Entheogens improve mental health"
+    icon={brainIcon}
+    alt="An icon of a brain on a yellow background surrounded in blue wavy lines"
+    id="mental-health-benefits"
+  >
+    <p>
+      Entheogens such as psilocybin (or "magic mushrooms") have been shown to help alleviate depression<FootnoteReference index={1} />,
+      end-of-life anxiety<FootnoteReference index={2} />, and alcohol use disorder<FootnoteReference index={3} />.
+      Millions of American adults struggle with mental health conditions like treatment-resistant depression<FootnoteReference index={17} />,
+      and they deserve to have access to these promising medicines without living under the threat of a felony.
+    </p>
+  </Benefit>
+  <Benefit
+    heading="Entheogens are safe and non-addictive"
+    icon={mushroomIcon}
+    alt="An icon of two brown capped mushrooms with stems"
+    id="safe-and-non-addictive"
+  >
+    <p>
+      Entheogenic plants and fungi are physiologically safe and do not lead to dependence or addiction<FootnoteReference index={8} />.
+      In fact, entheogens have been shown to help break addictions such as alcohol use disorder<FootnoteReference index={3} /> and tobacco use disorder<FootnoteReference index={9} />.
+      UW-Madison is even studying psilocybin (or "magic mushrooms") as a way to help treat opioid use disorder<FootnoteReference index={10} />.
+    </p>
+  </Benefit>
+  <Benefit
+    heading="Entheogens promote empathy and kickstart positive life change"
+    icon={heartIcon}
+    alt="An icon of a red heart shape with a black outline"
+    id="sense-of-community"
+  >
+    <p>
+      Research has demonstrated that entheogenic plants and fungi can enhance feelings of empathy, self-love,
+      and love for others<FootnoteReference index={12} /><FootnoteReference index={13} />. Additionally, they have
+      been shown to boost the brain's neuroplasticity, allowing neural networks to adapt and grow more easily<FootnoteReference index={14} /><FootnoteReference index={15} />.
+      This increased neuroplasticity enables the brain to form new connections that reinforce the positive transformations
+      sparked by the experience, leading to lasting
+      change<FootnoteReference index={16} />.
+    </p>
+  </Benefit>
+  <Benefit
+    heading="Wisconsin law is incredibly harsh"
+    icon={flowerBehindBarsIcon}
+    alt="An icon of an orange flower behind jail cell bars"
+    id="current-penalties"
+  >
+    <p>
+      Despite being non-violent, under current Wisconsin criminal code, almost all entheogen-related crimes are felonies
+      punishable by up to 3.5 years in prison, a fine of up to $10,000 or both<FootnoteReference index={4} />.
+      For some entheogens such as mescaline, harvesting just 1 gram is punishable by up to 12.5 years in prison,
+      a fine of up to $25,000 or both<FootnoteReference index={4} />. This is despite the fact that mescaline has been used
+      safely by indigenous cultures as a sacred medicine for thousands of years<FootnoteReference index={5} />.
+      In fact, mescaline has recently been found to be associated with self-reported psychiatric improvements
+      and lasting positive life changes<FootnoteReference index={6} />.
+    </p>
+  </Benefit>
+  <Benefit
+    heading="Our resources are better spent elsewhere"
+    icon={clockIcon}
+    alt="An icon of a clock"
+    id="city-resources"
+  >
+    <p>
+      The City of Madison faces many pressing issues that require its attention. By diverting resources towards
+      the investigation, arrest, and prosecution of entheogen-related offenses, the city is forced to allocate
+      valuable time and funds away from more critical issues. Madison is facing a 2025 budget deficit<FootnoteReference index={11} />.
+      Decriminalizing nature should be part of the solution.
+    </p>
+  </Benefit>
+</ul>

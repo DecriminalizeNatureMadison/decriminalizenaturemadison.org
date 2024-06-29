@@ -1,19 +1,14 @@
 ---
 import FootnoteReference from "../components/FootnoteReference.astro"
-import { Image } from "astro:assets"
-import brainIcon from "../assets/img/brain.svg"
-import flowerBehindBarsIcon from "../assets/img/flower-behind-bars.svg"
-import mushroomIcon from "../assets/img/mushrooms.svg"
-import clockIcon from "../assets/img/clock.svg"
-import heartIcon from "../assets/img/heart.svg"
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import MidwestMap from '../components/MidwestMap.astro'
+import Benefits from '../components/Benefits.astro'
 ---
 
 <DefaultLayout title="About">
   <div class="container">
     <div class="flex flex-col">
-      <h2 id="why" class="mb-3" style="color: var(--action-color)">Why decriminalize nature? What does that mean?</h2>
+      <h3 id="why" class="mb-3" style="color: var(--action-color)">Why decriminalize nature? What does that mean?</h3>
       <div class="flex flex-col gap-3">
         <p>
           In recent years, a surge in the research of entheogens such
@@ -33,75 +28,10 @@ import MidwestMap from '../components/MidwestMap.astro'
           Read more about the many reasons to decriminalize below!
         </p>
       </div>
-      <ul id="benefits" class="flex flex-col justify-between my-5 gap-5">
-        <li id="mental-health-benefits">
-          <Image class="icon" loading="eager" src={brainIcon} alt="An icon of a brain on a yellow background surrounded in blue wavy lines"/>
-          <div>
-            <h4>Entheogens improve mental health</h4>
-            <p>
-              Entheogens such as psilocybin (or "magic mushrooms") have been shown to help alleviate depression<FootnoteReference index={1} />,
-              end-of-life anxiety<FootnoteReference index={2} />, and alcohol use disorder<FootnoteReference index={3} />.
-              Millions of American adults struggle with mental health conditions like treatment-resistant depression<FootnoteReference index={17} />,
-              and they deserve to have access to these promising medicines without living under the threat of a felony.
-            </p>
-          </div>
-        </li>
-        <li id="safe-and-non-addictive">
-          <Image class="icon" src={mushroomIcon} alt="An icon of two brown capped mushrooms with stems" loading="eager" />
-          <div>
-            <h4>Entheogens are safe and non-addictive</h4>
-            <p>
-              Entheogenic plants and fungi are physiologically safe and do not lead to dependence or addiction<FootnoteReference index={8} />.
-              In fact, entheogens have been shown to help break addictions such as alcohol use disorder<FootnoteReference index={3} /> and tobacco use disorder<FootnoteReference index={9} />.
-              UW-Madison is even studying psilocybin (or "magic mushrooms") as a way to help treat opioid use disorder<FootnoteReference index={10} />.
-            </p>
-          </div>
-        </li>
-        <li id="sense-of-community">
-          <Image class="icon" loading="eager" src={heartIcon} alt="An icon of a red heart shape with a black outline"/>
-          <div>
-            <h4>Entheogens promote empathy and kickstart positive life change</h4>
-            <p>
-              Research has demonstrated that entheogenic plants and fungi can enhance feelings of empathy, self-love,
-              and love for others<FootnoteReference index={12} /><FootnoteReference index={13} />. Additionally, they have
-              been shown to boost the brain's neuroplasticity, allowing neural networks to adapt and grow more easily<FootnoteReference index={14} /><FootnoteReference index={15} />.
-              This increased neuroplasticity enables the brain to form new connections that reinforce the positive transformations
-              sparked by the experience, leading to lasting
-              change<FootnoteReference index={16} />.
-            </p>
-          </div>
-        </li>
-        <li id="current-penalties">
-          <Image class="icon" loading="eager" src={flowerBehindBarsIcon} alt="An icon of an orange flower behind jail cell bars"/>
-          <div>
-            <h4>Wisconsin law is incredibly harsh</h4>
-            <p>
-              Despite being non-violent, under current Wisconsin criminal code, almost all entheogen-related crimes are felonies
-              punishable by up to 3.5 years in prison, a fine of up to $10,000 or both<FootnoteReference index={4} />.
-              For some entheogens such as mescaline, harvesting just 1 gram is punishable by up to 12.5 years in prison,
-              a fine of up to $25,000 or both<FootnoteReference index={4} />. This is despite the fact that mescaline has been used
-              safely by indigenous cultures as a sacred medicine for thousands of years<FootnoteReference index={5} />.
-              In fact, mescaline has recently been found to be associated with self-reported psychiatric improvements
-              and lasting positive life changes<FootnoteReference index={6} />.
-            </p>
-          </div>
-        </li>
-        <li id="city-resources">
-          <Image class="icon" loading="eager" src={clockIcon} alt="An icon of a clock"/>
-          <div>
-            <h4>Our resources are better spent elsewhere</h4>
-            <p>
-              The City of Madison faces many pressing issues that require its attention. By diverting resources towards
-              the investigation, arrest, and prosecution of entheogen-related offenses, the city is forced to allocate
-              valuable time and funds away from more critical issues. Madison is facing a 2025 budget deficit<FootnoteReference index={11} />.
-              Decriminalizing nature should be part of the solution.
-            </p>
-          </div>
-        </li>
-      </ul>
+      <Benefits />
     </div>
-    <div class="flex flex-col gap-5">
-      <h2 id="how" class="mb-3" style="color: var(--action-color)">How would decriminalization work? How do we get there?</h2>
+    <div class="flex flex-col">
+      <h3 id="how" class="mb-3" style="color: var(--action-color)">How would decriminalization work? How do we get there?</h3>
       <p>
         There are a few different ways decriminalization can happen. We are open to them all, but the main way we are advocating
         for is through the city's Common Council. While the Common Council can't pass laws which override state law, it does
@@ -121,19 +51,6 @@ import MidwestMap from '../components/MidwestMap.astro'
       <div class="map-container">
         <MidwestMap />
       </div>
-      <style>
-          .icon {
-              max-width: 5em;
-              padding-right: 1%;
-              object-fit: contain;
-          }
-
-          #benefits li {
-              display: flex;
-              padding-top: 0.1rem;
-              flex-direction: row;
-          }
-      </style>
     </div>
   </div>
 </DefaultLayout>
