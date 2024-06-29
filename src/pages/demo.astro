@@ -1,0 +1,17 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+---
+<DefaultLayout title="Issue" showNavigationImage={true}>
+  <div class="container">
+    <p>Demo</p>
+  </div>
+  <script>
+    function init() {
+      alert("init called");
+    }
+
+    init();
+
+    document.addEventListener("astro:page-load", init);
+  </script>
+</DefaultLayout>
