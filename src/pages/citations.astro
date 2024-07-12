@@ -1,96 +1,274 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Footnote from '../components/Footnote.astro'
+import { Image } from "astro:assets";
+import psilocybinForDepressionImage from '../assets/img/psilocybin-for-depression.png'
+import psilocybinForAUDImage from '../assets/img/psilocybin-for-aud.png'
 ---
 <DefaultLayout title="Citations">
   <div class="container">
-    <h4 class="mb-3">Citations</h4>
-    <ol id="footnotes" class="text-xs">
+    <h3 class="mb-3" style="color: var(--action-color);">Citations</h3>
+    <ol id="footnotes" class="list-decimal list-inside">
       <Footnote
         index={1}
+        heading="Single-Dose Psilocybin Treatment for Major Depressive Disorder: A Randomized Clinical Trial"
         href="https://jamanetwork.com/journals/jama/fullarticle/2808950"
         citation="Raison CL, Sanacora G, Woolley J, et al. Single-Dose Psilocybin Treatment for Major Depressive Disorder: A Randomized Clinical Trial. JAMA. 2023;330(9):843–853. doi:10.1001/jama.2023.14530"
-      />
+      >
+        <p>
+          A study was conducted to evaluate the safety and efficacy of psilocybin in patients with major depressive
+          disorder. A total of 104 adults participated in the study.
+        </p>
+        <p>
+          Approximately half the participants received psilocybin, while the other half received a placebo. Both groups
+          underwent preparatory sessions with two medical professionals, and were supervised during their experience.
+        </p>
+        <p>
+          The study found that a 25mg dose of psilocybin was associated with a lasting reduction in depressive symptoms,
+          without serious adverse events.
+        </p>
+        <div class="max-w-4xl">
+          <Image src={psilocybinForDepressionImage} alt="A figure summarizing the results of the study"></Image>
+        </div>
+      </Footnote>
       <Footnote
         index={2}
-        href="https://pubmed.ncbi.nlm.nih.gov/34619818/"
+        heading="Psilocybin Produces Substantial and Sustained Decreases in Depression and Anxiety in Patients with Life-Threatening Cancer: A Randomized Double-Blind Trial"
+        href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8542741/"
         citation="Griffiths, Roland R et al. “Psilocybin produces substantial and sustained decreases in depression and anxiety in patients with life-threatening cancer: A randomized double-blind trial.” Journal of psychopharmacology (Oxford, England) vol. 30,12 (2016): 1181-1197. doi:10.1177/0269881116675513"
-      />
+      >
+        <p>
+          Five studies evaluating the effectiveness and tolerability of psilocybin-assisted therapy
+          for treating end-of-life anxiety symptoms were examined. All five studies specifically focused on cancer and HIV patients.
+        </p>
+        <p>
+          The examination found that psilocybin-assisted therapy is  superior to a placebo in treating
+          end-of-life anxiety. This effect was observed as soon as the day after the session, and remained
+          a month later.
+        </p>
+      </Footnote>
       <Footnote
         index={3}
-        href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8542741/"
+        heading="Percentage of Heavy Drinking Days Following Psilocybin-Assisted Psychotherapy vs Placebo in the Treatment of Adult Patients With Alcohol Use Disorder: A Randomized Clinical Trial"
+        href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2795625"
         citation="Bogenschutz, Michael P et al. “Percentage of Heavy Drinking Days Following Psilocybin-Assisted Psychotherapy vs Placebo in the Treatment of Adult Patients With Alcohol Use Disorder: A Randomized Clinical Trial.” JAMA psychiatry vol. 79,10 (2022): 953-962. doi:10.1001/jamapsychiatry.2022.2096"
-      />
+      >
+        <p>
+          A study was conducted to determine whether psilocybin-assisted treatment improved drinking outcomes in patients with
+          alcohol use disorder compared to a placebo. The study consisted of 93 participants. 49 received a high dose of psilocybin,
+          and 46 received a placebo. Both groups also underwent 12 weeks of therapy,
+        </p>
+        <p>
+          The study followed up with participants for 32 weeks after the study and found that the group which underwent
+          psilocybin-assisted therapy had a significant decrease in heavy drinking days compared to the placebo group.
+        </p>
+        <div class="max-w-4xl">
+          <Image src={psilocybinForAUDImage} alt="A figure summarizing the results of the study"></Image>
+        </div>
+      </Footnote>
       <Footnote
         index={4}
+        heading="What Are the Current Criminal Penalties for Psychedelics?"
         href="https://docs.google.com/spreadsheets/d/1yqqTTEAO4hdnxKM-GBU6Djz3KkvFSwGIZDgs3fNW7wk/edit?gid=0#gid=0"
         citation="“What Are the Current Criminal Penalties for Psychedelics?” Decriminalize Nature Madison."
-      />
+      >
+        <p>
+          We have curated a spreadsheet detailing the current criminal penalties of entheogens (aka psychedelics)
+          in Wisconsin. The first sheet contains the different relevant criminal codes and a description of the different
+          felony classes. The second sheet contains a listing of other felonies and what the equivalent entheogen violation
+          would be.
+        </p>
+        <p>
+          The spreadsheet is linked below.
+        </p>
+      </Footnote>
       <Footnote
         index={5}
+        heading="Mescaline Use for 5700 years"
         href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(02)08701-9/fulltext"
         citation="Bruhn JG, De Smet PA, El-Seedi HR, Beck O.. “Mescaline use for 5700 years”. Lancet. 2002;359(9320):1866."
-      />
+      >
+        <p>
+          This article describes how archaeological investigations in Mexico and Texas have shown that the use of the peyote
+          cactus in the region goes back to around 8500 BC. The peyote cactus contains mescaline.
+        </p>
+      </Footnote>
       <Footnote
         index={6}
+        heading="Naturalistic Use of Mescaline Is Associated with Self-Reported Psychiatric Improvements and Enduring Positive Life Changes"
         href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8033766/"
         citation="Agin-Liebes, Gabrielle et al. “Naturalistic Use of Mescaline Is Associated with Self-Reported Psychiatric Improvements and Enduring Positive Life Changes.” ACS pharmacology & translational science vol. 4,2 543-552. 23 Mar. 2021, doi:10.1021/acsptsci.1c00018"
-      />
+      >
+        <p>
+          A survey was conducted asking 452 adults about their most memorable mescaline experiences and the outcomes
+          they attribute to them.
+        </p>
+        <p>
+          Approximately half of the respondents reported having a psychiatric condition
+          (like depression and anxiety). Of that half, approximately 67% reported improvements in their conditions following
+          their most memorable mescaline experience.
+        </p>
+        <p>
+          No respondents reported seeking medical attention as a result of their mescaline use. Most participants (60%)
+          reported using mescaline less than once a year.
+        </p>
+      </Footnote>
       <Footnote
         index={7}
+        heading="The Prevalence and National Burden of Treatment-Resistant Depression and Major Depressive Disorder in the United States"
         href="https://www.psychiatrist.com/jcp/prevalence-national-burden-treatment-resistant-depression-major-depressive-disorder-in-us/"
         citation="Zhdanava, Maryia et al. “The Prevalence and National Burden of Treatment-Resistant Depression and Major Depressive Disorder in the United States.” The Journal of clinical psychiatry vol. 82,2 20m13699. 16 Mar. 2021, doi:10.4088/JCP.20m13699"
-      />
+      >
+        <p>
+          A study was conducted to evaluate how many American adults suffer from treatment-resistant depression and
+          major depressive disorder.
+        </p>
+        <p>
+          The study estimated that nearly 12 million American adults are being medicated for major depressive disorder
+          or treatment-resistant depression.
+        </p>
+      </Footnote>
       <Footnote
         index={8}
+        heading="Adverse Effects of Psychedelics: From Anecdotes and Misinformation to Systematic Science"
         href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8905125/"
         citation="Schlag, Anne K et al. “Adverse effects of psychedelics: From anecdotes and misinformation to systematic science.” Journal of psychopharmacology (Oxford, England) vol. 36,3 (2022): 258-272. doi:10.1177/02698811211069100"
-      />
+      >
+        <p>
+          A group of researchers conducted a review of evidence of potential harm caused by classic psychedelics. They
+          aimed to address physiological and psychiatric risks such as abuse potential, dependence, toxicity, and overdose.
+        </p>
+        <p>
+          The review found that the medical risks of classic psychedelics are minimal and psychological risks are
+          largely unsupported by currently available scientific evidence.
+        </p>
+      </Footnote>
       <Footnote
         index={9}
+        heading="Pilot Study of the 5-HT2AR Agonist Psilocybin in the Treatment of Tobacco Addiction"
         href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4286320/"
         citation="Johnson, Matthew W et al. “Pilot study of the 5-HT2AR agonist psilocybin in the treatment of tobacco addiction.” Journal of psychopharmacology (Oxford, England) vol. 28,11 (2014): 983-92. doi:10.1177/0269881114548296"
-      />
+      >
+        <p>
+          A study was conducted to determine the safety and feasibility of supplementing standard smoking cessation treatment
+          with psilocybin sessions. In total, 15 smoking adults completed the study with most undergoing three psilocybin
+          sessions over 15 weeks.
+        </p>
+        <p>
+
+        </p>
+        <p>
+          The study observed a 80% smoking cessation rate, with 12 out 15 participants found to be abstinent from smoking
+          at a 6-month followup. This substantially exceeds the usual rates reported by other treatment methods
+          (typically less than 35%). No significant adverse events occurred across all 42 psilocybin sessions.
+        </p>
+      </Footnote>
       <Footnote
         index={10}
+        heading="First-In-Kind Psychedelic Trials Treat Opioid and Methamphetamine Use Disorders"
         href="https://news.wisc.edu/two-first-in-kind-clinical-trials-explore-psilocybin-for-substance-misuse/"
         citation="Gerhards, Katie. First-In-Kind Psychedelic Trials Treat Opioid and Methamphetamine Use Disorders. UW-Madison, 6 Jan. 2023."
-      />
+      >
+        <p>
+          This UW-Madison press release describes two new clinical trials being conducted at the
+          <a href="https://research.pharmacy.wisc.edu/tcrps/">UW-Madison Transdisciplinary Center for Research in
+            Psychoactive Substances</a>. The trials aim to determine the safety and feasibility of supplementing
+          standard buprenorphine-naloxone maintenance therapy with psilocybin.
+        </p>
+        <p>
+          Buprenorphine-naloxone is a medication used to help treat opioid use disorder by relieving cravings and
+          withdrawal symptoms.
+        </p>
+      </Footnote>
       <Footnote
         index={11}
-        href="https://www.cityofmadison.com/finance/documents/budget/2025/CommunityBudgetConversations.pdf"
-        citation="2025 Budget Outlook Common Council Community Budget Conversations. City of Madison, 2024."
-      />
+        heading="2025 Budget Outlook"
+        href="https://www.cityofmadison.com/finance/documents/budget/2025/CommunityBudgetConversations.pdf#page=6"
+        citation="2025 Budget Outlook. City of Madison, 2024."
+      >
+        <p>
+          The City of Madison is facing a 2025 budget deficit. Linked below is a presentation the City has put together
+          detailing the problem.
+        </p>
+      </Footnote>
       <Footnote
         index={12}
+        heading="Tripping Over the Other: Could Psychedelics Increase Empathy"
         href="https://akjournals.com/view/journals/2054/4/3/article-p163.xml"
         citation="Blatchforde, E., Bright, S., and Engel, L. (2021). Tripping over the other: could psychedelics increase empathy? J. Psychedelic Stud. 4, 163–170. doi: 10.1556/2054.2020.00136"
-      />
+      >
+        <p>
+          This research article explores the clinical evidence that entheogens (aka psychedelics) increase empathy.
+        </p>
+        <p>
+          It finds that the evidence implies entheogens likely leads to increased empathy, openness and social connectedness.
+        </p>
+      </Footnote>
       <Footnote
         index={13}
+        heading="The Love Project: Preliminary Outcomes of a Survey Study Among Psychedelic Users"
         href="https://promega.widencollective.com/portals/p7bigueo/ConsciousnessForum/playlist/e0ba027c-120f-438f-915c-6b55e702c65a/yeq3czdkhp/2024-Consciousness-Forum_Day-2_Adele-Lafrance.mp4"
         citation="Lafrance, Adele. The Love Project: Preliminary Outcomes of a Survey Study among Psychedelic Users. 17 May 2024."
-      />
+      >
+        <p>
+          A survey study was conducted to collect and examine profound experiences occasioned by entheogens in which love
+          was a central theme.
+        </p>
+        <p>
+          Approximately 579 responses were collected. The common theme between them is increased love for self, community
+          and others.
+        </p>
+        <p>
+          This data was recently presented for the first time at the <a href="https://www.btci.org/events-symposia/international-forum-on-consciousness/">
+          International Forum On Consciousness</a> in Fitchburg, WI!
+        </p>
+      </Footnote>
       <Footnote
         index={14}
+        heading="Psychedelics Promote Neuroplasticity Through the Activation of Intracellular 5-HT2A Receptors"
         href="https://www.science.org/doi/10.1126/science.adf0435"
-        citation="Maxemiliano V. Vargas et al. ,Psychedelics promote neuroplasticity through the activation of intracellular 5-HT2A receptors.Science379,700-706(2023).DOI:10.1126/science.adf0435"
-      />
+        citation="Maxemiliano V. Vargas et al., Psychedelics promote neuroplasticity through the activation of intracellular 5-HT2A receptors.Science379,700-706(2023).DOI:10.1126/science.adf0435"
+      >
+        <p>
+          This research article describes how entheogens (aka psychedelics) promote neuroplasticity, or the ability for
+          the brain to forge new pathways. The research article states that the neuroplasticity is due to entheogens
+          binding to the brain's 5-HT2A receptors.
+        </p>
+        <p>
+          A 5-HT2A receptor is a typically serotonin receptor, and many entheogens
+          resemble the chemical structure of serotonin. Serotonin is naturally produced by the body and assists in many
+          important functions such as mood and memory.
+        </p>
+      </Footnote>
       <Footnote
         index={15}
+        heading="Catalysts for Change: the Cellular Neurobiology of Psychedelics"
         href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351556/"
         citation="Banks, Matthew I et al. “Catalysts for change: the cellular neurobiology of psychedelics.” Molecular biology of the cell vol. 32,12 (2021): 1135-1144. doi:10.1091/mbc.E20-05-0340"
-      />
+      >
+        <p>
+          This research article, written by a group of researchers from UW-Madison, discusses how entheogens (aka psychedelics)
+          promote neural plasticity in the brain, or the ability for the brain to forge new pathways. This is believed to be central
+          to their therapeutic benefits.
+        </p>
+      </Footnote>
       <Footnote
         index={16}
+        heading="Sustained Effects of Single Doses of Classical Psychedelics in Humans"
         href="https://www.nature.com/articles/s41386-022-01361-x"
         citation="Knudsen, Gitte M. ‘Sustained Effects of Single Doses of Classical Psychedelics in Humans’. Neuropsychopharmacology, vol. 48, no. 1, Jan. 2023, pp. 145–150, https://doi.org10.1038/s41386-022-01361-x."
-      />
-      <Footnote
-        index={17}
-        href="https://mhanational.org/mentalhealthfacts"
-        citation="Mental Health America. “Quick Facts and Statistics about Mental Health.” Mental Health America, 2022."
-      />
+      >
+        <p>
+          This review article summarizes the evidence that entheogens (psychedelics) promote long-lasting positive effects.
+          It finds that entheogens can help improve emotional state in those with and without neuropsychiatric disorders
+          like depression.
+        </p>
+        <p>
+          Based on current knowledge, it is believed many of these long-lasting positive effects occur
+          due to increases in neuroplasticity caused by entheogens. Neuroplasticity is the ability for the brain
+          to forge new pathways.
+        </p>
+      </Footnote>
     </ol>
   </div>
 </DefaultLayout>
