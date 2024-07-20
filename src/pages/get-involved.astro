@@ -1,0 +1,78 @@
+---
+import SidebarLayout from '../layouts/SidebarLayout.astro'
+import { Image } from "astro:assets"
+import mushroomsImage from "../assets/img/mushrooms.jpg"
+---
+<SidebarLayout
+  title="Get Involved"
+  image={mushroomsImage}
+  alt="Three P.pelliculosa fruiting bodies in their natural habitat: A forest floor covered with wood chips"
+  heading="Get involved"
+>
+  <h5 class="heading">Live in the City of Madison?</h5>
+  <p>
+    The easiest way to help is to contact your local district Alder and let them know this is an issue
+    that is important to you. To contact your Alder, click the 'Find My Alder' button below. Once
+    on your Alder's page, click the 'Contact Alder' link under the 'Contact Information' section.
+  </p>
+  <p>
+    If you'd like to use it, we have put together a message template below.
+    We encourage you to customize it to best represent you!
+  </p>
+  <div class="template border-black border-2 p-2">
+    <p>
+      Hello,
+    </p>
+    <p>
+      I'm reaching out because I would like to see the City of Madison decriminalize entheogenic plants and
+      fungi.
+    </p>
+    <p>
+      Research has shown that entheogens (such as psilocybin) are safe and non-addictive. In fact, studies have found
+      that entheogens can help improve mental health, promote empathy, and kickstart positive life changes. Despite this,
+      Wisconsin law applies felony punishments to most entheogen law!
+    </p>
+    <p>
+      In fact, Madison wouldn't be the first city to decriminalize entheogenic plants and fungi.
+      Minneapolis, Detroit and Ann Arbor have all decriminalized recently.
+    </p>
+    <p>
+      I encourage you to consider supporting and working with the local movement to decriminalize entheogens,
+      Decriminalize Nature Madison. You can visit their website at <a href="https://dnmadison.org">https://dnmadison.org</a> for more information
+      on entheogens and their benefits. You can also email them at <a href="mailto:contact@dnmadison.org">contact@dnmadison.org</a>.
+    </p>
+    <p>
+      Thank you for your consideration
+    </p>
+  </div>
+  <div>
+    <button class="copy-template outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Copy template</button>
+    <form class="pt-2 lg:inline" action="https://www.cityofmadison.com/council/councilmembers/findalderbyaddress.cfm">
+      <button type="submit" class="outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Find My Alder</button>
+    </form>
+  </div>
+
+  <style>
+      .template p:first-of-type {
+          padding-top: 0;
+      }
+      .template p {
+          padding-top: 1rem;
+      }
+  </style>
+
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const copyTemplateButton = document.querySelector(".copy-template");
+      if (copyTemplateButton != null) {
+        copyTemplateButton.addEventListener("click", () => {
+          const templateContainer = document.querySelector(".template");
+          copyTemplateButton.textContent = "Copied!";
+          navigator.clipboard.writeText(templateContainer.textContent);
+        });
+      }
+    });
+  </script>
+
+</SidebarLayout>
+
