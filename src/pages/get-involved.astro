@@ -24,22 +24,16 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
       Hello,
     </p>
     <p>
-      I'm reaching out because I would like to see the City of Madison decriminalize entheogenic plants and
-      fungi.
+      I'm reaching out because I would like to see the City of Madison decriminalize entheogenic plants and fungi.
     </p>
     <p>
-      Research has shown that entheogens (such as psilocybin) are safe and non-addictive. In fact, studies have found
-      that entheogens can help improve mental health, promote empathy, and kickstart positive life changes. Despite this,
-      Wisconsin law applies felony punishments to most entheogen law!
+      Research has shown that entheogens (such as psilocybin) are safe and non-addictive. In fact, studies have found that entheogens can help improve mental health, promote empathy, and kickstart positive life changes. Despite this, Wisconsin applies felony punishments to most entheogen law!
     </p>
     <p>
-      In fact, Madison wouldn't be the first city to decriminalize entheogenic plants and fungi.
-      Minneapolis, Detroit and Ann Arbor have all decriminalized recently.
+      In fact, Madison wouldn't be the first city to decriminalize entheogenic plants and fungi. Minneapolis, Detroit and Ann Arbor have all decriminalized recently.
     </p>
     <p>
-      I encourage you to consider supporting and working with the local movement to decriminalize entheogens,
-      Decriminalize Nature Madison. You can visit their website at <a href="https://dnmadison.org">https://dnmadison.org</a> for more information
-      on entheogens and their benefits. You can also email them at <a href="mailto:contact@dnmadison.org">contact@dnmadison.org</a>.
+      I encourage you to consider supporting and working with the local movement to decriminalize entheogens, Decriminalize Nature Madison. You can visit their website at <a href="https://dnmadison.org">https://dnmadison.org</a> for more information on entheogens and their benefits. You can also email them at <a href="mailto:contact@dnmadison.org">contact@dnmadison.org</a>.
     </p>
     <p>
       Thank you for your consideration
@@ -65,10 +59,16 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
     document.addEventListener("astro:page-load", () => {
       const copyTemplateButton = document.querySelector(".copy-template");
       if (copyTemplateButton != null) {
+        const templateContainer = document.querySelector(".template");
+        let templateText = "";
+        for (const childElement of templateContainer.children) {
+          templateText += childElement.textContent.trim();
+          templateText += "\n\n";
+        }
+        templateText = templateText.substring(0, templateText.length - 2);
         copyTemplateButton.addEventListener("click", () => {
-          const templateContainer = document.querySelector(".template");
+          navigator.clipboard.writeText(templateText);
           copyTemplateButton.textContent = "Copied!";
-          navigator.clipboard.writeText(templateContainer.textContent);
         });
       }
     });
