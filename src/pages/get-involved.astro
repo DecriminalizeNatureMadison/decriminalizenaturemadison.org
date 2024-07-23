@@ -11,18 +11,22 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
 >
   <h5 class="heading">Live in the City of Madison?</h5>
   <p class="instructions">
-    The easiest way to help is to contact your local district Alder and let them know this is an issue
+    The easiest way to help is to contact your local district Alder and the Mayor to let them know this is an issue
     you care about. To contact your Alder, click the 'Find My Alder' button below.
     <span class="unknown-district-instructions">Once on your Alder's page, click the 'Contact Alder' link under the 'Contact Information' section.</span>
+    To contact the Mayor, click the 'Contact The Mayor' button below.
   </p>
   <p>
     If you'd like to use it, we have put together a message template below.
     We encourage you to customize it to best represent you!
   </p>
-  <div>
-    <button class="copy-template outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36 mr-3">Copy template</button>
-    <form class="find-my-alder-form pt-2 lg:inline" action="https://www.cityofmadison.com/council/councilmembers/findalderbyaddress.cfm">
+  <div class="flex flex-row gap-2">
+    <button class="copy-template outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Copy template</button>
+    <form class="find-my-alder-form" action="https://www.cityofmadison.com/council/councilmembers/findalderbyaddress.cfm">
       <button type="submit" class="find-my-alder-button outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Find My Alder</button>
+    </form>
+    <form action="https://www.cityofmadison.com/mayor/contact">
+      <button type="submit" class="outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-40">Contact The Mayor</button>
     </form>
   </div>
   <div class="template border-black border-2 p-2">
@@ -33,13 +37,13 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
       I'm reaching out because I would like to see the City of Madison decriminalize entheogenic plants and fungi.
     </p>
     <p>
-      Research has shown that entheogens (such as psilocybin) are safe and non-addictive. In fact, studies have found that entheogens can help improve mental health, promote empathy, and kickstart positive life changes. Despite this, Wisconsin applies felony punishments to most entheogen law!
+      Modern research has shown that entheogens (such as psilocybin) are safe and non-addictive. In fact, studies have found that entheogens can help treat mental health issues, like treatment-resistant depression and addiction. They have also been found to promote empathy and kickstart positive life changes. Despite this, Wisconsin considers most violations of entheogen law to be felonies!
     </p>
     <p>
-      In fact, Madison wouldn't be the first city to decriminalize entheogenic plants and fungi. Minneapolis, Detroit and Ann Arbor have all decriminalized recently.
+      Madison residents shouldn't have to live in fear of a felony for using a promising medicine. Madison wouldn't be the first city to decriminalize entheogenic plants and fungi, either. Minneapolis, Detroit and Ann Arbor have all decriminalized recently.
     </p>
     <p>
-      I encourage you to consider supporting and working with the local movement to decriminalize entheogens, Decriminalize Nature Madison. You can visit their website at <a href="https://dnmadison.org">https://dnmadison.org</a> for more information on entheogens and their benefits. You can also email them at <a href="mailto:contact@dnmadison.org">contact@dnmadison.org</a>.
+      I encourage you to support the local movement to decriminalize entheogens, Decriminalize Nature Madison. You can visit their website at <a href="https://dnmadison.org">https://dnmadison.org</a> for more information on entheogens and their benefits. You can also email them at <a href="mailto:contact@dnmadison.org">contact@dnmadison.org</a>.
     </p>
     <p>
       Thank you for your consideration
@@ -70,7 +74,7 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
           padding-top: 0;
       }
       .template p {
-          padding-top: 1rem;
+          padding-top: 0.75rem;
       }
   </style>
 
