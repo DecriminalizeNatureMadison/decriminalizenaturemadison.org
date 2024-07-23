@@ -3,6 +3,7 @@ import SidebarLayout from '../layouts/SidebarLayout.astro'
 import BlogPost from '../components/BlogPost.astro'
 import blogImage from '../assets/img/heavenly-blue-morning-glory.jpg'
 import emblemImage from '../assets/img/emblem-filled.svg'
+import cuteEarthimage from '../assets/img/cute-earth.svg'
 ---
 <SidebarLayout
         title="Blog"
@@ -12,11 +13,20 @@ import emblemImage from '../assets/img/emblem-filled.svg'
         description="This is where we communicate news and updates"
 >
     <BlogPost
+      img={cuteEarthimage}
+      alt="A cartoony photo of the Earth blushing with a smile and eyes"
+      height=100
+      postTitle="Join us at our first informational table!"
+      excerpt="We will be hosting our first informational table Sunday, 7/28/24 on State St by Lisa Link Peace Park."
+      path="first-table"
+    />
+    <BlogPost
         img={emblemImage}
         alt="The Decriminalize Nature Madison emblem"
         height=100
         postTitle="Website launched"
         excerpt="Welcome to our website!"
+        path="welcome"
     />
 </SidebarLayout>
 

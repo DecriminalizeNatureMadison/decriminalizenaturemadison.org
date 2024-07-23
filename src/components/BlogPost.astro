@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets"
-const { img, alt, postTitle, excerpt, imgHeight = 100 } = Astro.props
+const { img, alt, postTitle, excerpt, imgHeight= 100, path } = Astro.props
 ---
 <div class="flex flex-row gap-5">
     <div>
         <Image src={img} alt={alt} height={imgHeight} />
     </div>
     <div class="space-content">
-        <a href="/blog/welcome">{postTitle}</a>
+        <a href={`/blog/${path}`}>{postTitle}</a>
         <p>{excerpt}</p>
     </div>
 </div>
