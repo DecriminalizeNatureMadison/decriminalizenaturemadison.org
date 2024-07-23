@@ -87,24 +87,23 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
         let districtInput = queryParams.get("district");
         if (districtInput == null) {
           districtInput = window.sessionStorage.getItem("districtInput");
-          if (districtInput == null) {
-            return;
-          }
         }
-        window.sessionStorage.setItem("districtInput", districtInput);
-        const districtNumber = parseInt(districtInput);
-        if (districtNumber >= 1 && districtNumber <= 20) {
-          document.querySelector(".unknown-district-instructions").remove();
-          const newButtonText = "Contact My Alder";
-          instructionsElement.textContent = instructionsElement.textContent.replace("Find My Alder", newButtonText);
-          document.querySelector(".find-my-alder-button").textContent = newButtonText;
-          const findMyAlderForm = document.querySelector(".find-my-alder-form");
-          findMyAlderForm.setAttribute("action", "https://www.cityofmadison.com/council/contact");
-          const districtInputElement = document.createElement("input");
-          districtInputElement.setAttribute("type", "hidden");
-          districtInputElement.setAttribute("name", "districtNumber");
-          districtInputElement.setAttribute("value", `${districtNumber}`);
-          findMyAlderForm.insertAdjacentElement("afterbegin", districtInputElement);
+        if (districtInput != null) {
+          window.sessionStorage.setItem("districtInput", districtInput);
+          const districtNumber = parseInt(districtInput);
+          if (districtNumber >= 1 && districtNumber <= 20) {
+            document.querySelector(".unknown-district-instructions").remove();
+            const newButtonText = "Contact My Alder";
+            instructionsElement.textContent = instructionsElement.textContent.replace("Find My Alder", newButtonText);
+            document.querySelector(".find-my-alder-button").textContent = newButtonText;
+            const findMyAlderForm = document.querySelector(".find-my-alder-form");
+            findMyAlderForm.setAttribute("action", "https://www.cityofmadison.com/council/contact");
+            const districtInputElement = document.createElement("input");
+            districtInputElement.setAttribute("type", "hidden");
+            districtInputElement.setAttribute("name", "districtNumber");
+            districtInputElement.setAttribute("value", `${districtNumber}`);
+            findMyAlderForm.insertAdjacentElement("afterbegin", districtInputElement);
+          }
         }
       }
       const copyTemplateButton = document.querySelector(".copy-template");
