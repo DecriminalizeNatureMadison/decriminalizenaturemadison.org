@@ -10,15 +10,21 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
   heading="Get involved"
 >
   <h5 class="heading">Live in the City of Madison?</h5>
-  <p>
+  <p class="instructions">
     The easiest way to help is to contact your local district Alder and let them know this is an issue
-    that is important to you. To contact your Alder, click the 'Find My Alder' button below. Once
-    on your Alder's page, click the 'Contact Alder' link under the 'Contact Information' section.
+    you care about. To contact your Alder, click the 'Find My Alder' button below.
+    <span class="unknown-district-instructions">Once on your Alder's page, click the 'Contact Alder' link under the 'Contact Information' section.</span>
   </p>
   <p>
     If you'd like to use it, we have put together a message template below.
     We encourage you to customize it to best represent you!
   </p>
+  <div>
+    <button class="copy-template outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36 mr-3">Copy template</button>
+    <form class="find-my-alder-form pt-2 lg:inline" action="https://www.cityofmadison.com/council/councilmembers/findalderbyaddress.cfm">
+      <button type="submit" class="find-my-alder-button outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Find My Alder</button>
+    </form>
+  </div>
   <div class="template border-black border-2 p-2">
     <p>
       Hello
@@ -38,12 +44,6 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
     <p>
       Thank you for your consideration
     </p>
-  </div>
-  <div>
-    <button class="copy-template outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36 mr-3">Copy template</button>
-    <form class="pt-2 lg:inline" action="https://www.cityofmadison.com/council/councilmembers/findalderbyaddress.cfm">
-      <button type="submit" class="outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Find My Alder</button>
-    </form>
   </div>
 
   <h5 class="heading">Live in Dane County?</h5>
@@ -75,7 +75,34 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
   </style>
 
   <script>
+
     document.addEventListener("astro:page-load", () => {
+      const instructionsElement = document.querySelector(".instructions");
+      if (instructionsElement != null) {
+        const queryParams = new URLSearchParams(window.location.search);
+        let districtInput = queryParams.get("district");
+        if (districtInput == null) {
+          districtInput = window.sessionStorage.getItem("districtInput");
+          if (districtInput == null) {
+            return;
+          }
+        }
+        window.sessionStorage.setItem("districtInput", districtInput);
+        const districtNumber = parseInt(districtInput);
+        if (districtNumber >= 1 && districtNumber <= 20) {
+          document.querySelector(".unknown-district-instructions").remove();
+          const newButtonText = "Contact My Alder";
+          instructionsElement.textContent = instructionsElement.textContent.replace("Find My Alder", newButtonText);
+          document.querySelector(".find-my-alder-button").textContent = newButtonText;
+          const findMyAlderForm = document.querySelector(".find-my-alder-form");
+          findMyAlderForm.setAttribute("action", "https://www.cityofmadison.com/council/contact");
+          const districtInputElement = document.createElement("input");
+          districtInputElement.setAttribute("type", "hidden");
+          districtInputElement.setAttribute("name", "districtNumber");
+          districtInputElement.setAttribute("value", `${districtNumber}`);
+          findMyAlderForm.insertAdjacentElement("afterbegin", districtInputElement);
+        }
+      }
       const copyTemplateButton = document.querySelector(".copy-template");
       if (copyTemplateButton != null) {
         const templateContainer = document.querySelector(".template");
