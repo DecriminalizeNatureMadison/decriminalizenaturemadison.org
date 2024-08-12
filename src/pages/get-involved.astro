@@ -25,13 +25,13 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
     <form class="find-my-alder-form" action="https://www.cityofmadison.com/council/councilmembers/findalderbyaddress.cfm">
       <button type="submit" class="find-my-alder-button outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Find My Alder</button>
     </form>
-    <form action="https://www.cityofmadison.com/mayor/contact">
+    <form class="mayor-form" action="https://www.cityofmadison.com/mayor/contact">
       <button type="submit" class="outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-40">Contact The Mayor</button>
     </form>
   </div>
   <div class="template border-black border-2 p-2">
     <p>
-      Hello
+      Hello,
     </p>
     <p>
       I'm reaching out because I would like to see the City of Madison decriminalize entheogenic plants and fungi.
@@ -46,7 +46,7 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
       I encourage you to support the local movement to decriminalize entheogens, Decriminalize Nature Madison. You can visit their website at <a href="https://dnmadison.org">https://dnmadison.org</a> for more information on entheogens and their benefits. You can also email them at <a href="mailto:contact@dnmadison.org">contact@dnmadison.org</a>.
     </p>
     <p>
-      Thank you for your consideration
+      Thank you for your consideration.
     </p>
   </div>
 
@@ -81,8 +81,19 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
   <script>
 
     document.addEventListener("astro:page-load", () => {
+      const matomoActionsArray = (window as any)._paq as Array<Array<any>>;
       const instructionsElement = document.querySelector(".instructions");
       if (instructionsElement != null) {
+        const findMyAlderForm = document.querySelector(".find-my-alder-form");
+        if (matomoActionsArray != null) {
+          function trackFormSubmission(event: SubmitEvent) {
+            const form = event.submitter.closest("form");
+            const queryParams = new URLSearchParams(new FormData(form)).toString();
+            matomoActionsArray.push(["trackLink", `${form.action}?${queryParams}`, "link"]);
+          }
+          findMyAlderForm.addEventListener("submit", trackFormSubmission);
+          document.querySelector(".mayor-form").addEventListener("submit", trackFormSubmission);
+        }
         const queryParams = new URLSearchParams(window.location.search);
         let districtInput = queryParams.get("district");
         if (districtInput == null) {
@@ -96,7 +107,6 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
             const newButtonText = "Contact My Alder";
             instructionsElement.textContent = instructionsElement.textContent.replace("Find My Alder", newButtonText);
             document.querySelector(".find-my-alder-button").textContent = newButtonText;
-            const findMyAlderForm = document.querySelector(".find-my-alder-form");
             findMyAlderForm.setAttribute("action", "https://www.cityofmadison.com/council/contact");
             const districtInputElement = document.createElement("input");
             districtInputElement.setAttribute("type", "hidden");
@@ -116,6 +126,9 @@ import mushroomsImage from "../assets/img/mushrooms.jpg"
         }
         templateText = templateText.substring(0, templateText.length - 2);
         copyTemplateButton.addEventListener("click", () => {
+          if (matomoActionsArray != null) {
+            matomoActionsArray.push(["trackEvent", "Get Involved", "Template copied", "1"]);
+          }
           navigator.clipboard.writeText(templateText);
           copyTemplateButton.textContent = "Copied!";
         });
