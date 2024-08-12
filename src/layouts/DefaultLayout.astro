@@ -4,6 +4,7 @@ import '@astrojs/tailwind/base.css'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import MatomoAnalytics from '../components/MatomoAnalytics.astro'
 
 const {
   title = 'Decriminalize Nature Madison',
@@ -29,6 +30,8 @@ const {
       description={description.substring(0, 100)}
       author={author}
     />
+
+    <MatomoAnalytics />
   </head>
   <body>
     <Header showNavigationImage={showNavigationImage} />
