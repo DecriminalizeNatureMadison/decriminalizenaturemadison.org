@@ -10,8 +10,8 @@ Effective Date: 08/11/2024
 We may collect personal information that you provide to us directly, such as your email address when you contact us.
 Additionally, we collect data about your visit to our website. This data may include your IP address, browser type, and pages visited.
 We use Matomo as our analytics platform. Matomo is open-source analytics software with an emphasis on protecting user privacy.
-We host our own Matomo instance to further protect user privacy. Our website is hosted using services from DigitalOcean,
-GitHub, and Cloudflare.
+We host our own Matomo instance to further protect user privacy.  For a full list of information collected by Matomo, please 
+visit https://matomo.org/faq/general/faq_18254/. Our website is hosted using services from DigitalOcean, GitHub, and Cloudflare.
 
 #### Use of Information
 
