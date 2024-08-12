@@ -24,6 +24,11 @@ The information we collect is used to understand how our website is used, and un
 
 We honor Do Not Track (DNT) settings. If you have enabled DNT in your browser, we will not track your activity on our website.
 
+You may also opt-out of tracking below.
+
+<div id="matomo-opt-out"></div>
+<script src="https://analytics.decriminalizenaturemadison.org/index.php?module=CoreAdminHome&action=optOutJS&divId=matomo-opt-out&language=auto&showIntro=1"></script>
+
 #### Data Sharing and Selling
 
 We do not share, sell, or rent your personal data to third parties. Your information is used solely for the purposes outlined in this policy.
