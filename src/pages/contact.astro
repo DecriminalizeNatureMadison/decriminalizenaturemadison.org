@@ -29,6 +29,7 @@ import contactImage from '../assets/img/coffee-plant.jpg'
                     return;
                 }
                 const statusElement = document.querySelector(".form-status");
+                const submitButton = contactForm.querySelector("button[type='submit']");
                 contactForm.addEventListener("submit", async event => {
                     if (!contactForm.reportValidity()) {
                         return;
@@ -40,6 +41,8 @@ import contactImage from '../assets/img/coffee-plant.jpg'
                         body: formContent,
                     };
                     const requestTarget = contactForm.getAttribute("action");
+                    statusElement.textContent = "Sending...";
+                    submitButton.setAttribute("disabled", "disabled");
                     // noinspection TypeScriptValidateTypes
                     const formResponse = await fetch(requestTarget, requestOptions);
                     if (formResponse.status === 200) {
@@ -48,6 +51,7 @@ import contactImage from '../assets/img/coffee-plant.jpg'
                     } else {
                         statusElement.textContent = "Something went wrong. Please try again.";
                     }
+                    submitButton.removeAttribute("disabled")
                 });
             });
         })();
