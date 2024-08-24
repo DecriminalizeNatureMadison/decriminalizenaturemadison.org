@@ -5,15 +5,6 @@ title: Licenses
 
 This website uses some licensed works. You can find details on their authors and licenses here.
 
-#### Software
-
-- **Work:** OpenPGP.js
-  - **Author**: Maintained by [Proton Mail](https://protonmail.com)
-  - **Source**: [openpgpjs.org](https://openpgpjs.org/)
-  - **Usage**: Used on the [Contact](/contact) page to PGP encrypt form submissions
-  - **Modifications**: None
-  - **License**: [LGPL 3.0](https://github.com/openpgpjs/openpgpjs/blob/main/LICENSE)
-
 #### Images
 
 - **Work:** *P.pelliculosa in natural habitat*

@@ -10,8 +10,8 @@ import contactImage from '../assets/img/coffee-plant.jpg'
         description="Fill out the form and we will get back to you as soon as possible!"
         class="w-full"
 >
-    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="2731d865-8b14-4cbf-9ba7-60847d9f66be">
+    <form id="contact-form" action="https://forms.decriminalizenaturemadison.org/form-submission" method="POST">
+        <input type="hidden" name="form" value="Contact Form">
         <label for="email">Email:</label>
         <input id="email" name="email" type="email" class="block w-full" required="required"></input>
         <label for="message">Message:</label>
@@ -21,34 +21,8 @@ import contactImage from '../assets/img/coffee-plant.jpg'
     <p class="form-status"></p>
 
     <script>
-        // PGP encrypt form submissions because we don't host web3forms so they should not get plaintext :)
-        import * as openpgp from 'openpgp';
         (async function() {
             document.addEventListener("astro:page-load", async () => {
-                const ourPublicKeyBlock = `-----BEGIN PGP PUBLIC KEY BLOCK-----\n\n` +
-                  `mDMEZnj4ZBYJKwYBBAHaRw8BAQdAkBMV2/ZC+cDKzqTOOrPeRzJdW0tFy59nwae3` +
-                  `ZlL4pn20QURlY3JpbWluYWxpemUgTmF0dXJlIE1hZGlzb24gPHBncEBkZWNyaW1p` +
-                  `bmFsaXplbmF0dXJlbWFkaXNvbi5vcmc+iJoEExYKAEIWIQQbpJ2/zgErdXe5Y5Tw` +
-                  `kLQwVdNHxwUCZnj4ZAIbAwUJA8HDLAULCQgHAgMiAgEGFQoJCAsCBBYCAwECHgcC` +
-                  `F4AACgkQ8JC0MFXTR8cHsgD+NnPzO2LC+od30X+NMoMJefDuqOYMABSwQuMU0eo5` +
-                  `Q8UA/isuXebHqdfqNQYeJD3cK3QrH9hCdolpcB5hrn2zU/YHuDgEZnj4ZBIKKwYB` +
-                  `BAGXVQEFAQEHQC8uODXofmw+2QrNTMRu/Hq1xoXdwoNRt5JGkwQa3dZeAwEIB4h+` +
-                  `BBgWCgAmFiEEG6Sdv84BK3V3uWOU8JC0MFXTR8cFAmZ4+GQCGwwFCQPBwywACgkQ` +
-                  `8JC0MFXTR8es3wEAojZz0wbHl/T/CcGOe33HfhSgqUj+SFpWBaxdK/kf5jgBAIS/` +
-                  `mjY0qsB3yd4DB6azZgWDdpDbE5lk4tBfy5axHsUE` +
-                  `=FNiU\n` +
-                  `-----END PGP PUBLIC KEY BLOCK-----\n`;
-
-                const ourPublicKey = await openpgp.readKey({ armoredKey: ourPublicKeyBlock });
-
-                async function encryptString(publicKey: openpgp.PublicKey, string: String): Promise<String> {
-                    const message = await openpgp.createMessage({ text: string });
-                    return await openpgp.encrypt({
-                        message: message,
-                        encryptionKeys: publicKey,
-                    });
-                }
-
                 const contactForm: HTMLFormElement = document.getElementById("contact-form") as HTMLFormElement;
                 // TODO: fix the need for this
                 if (contactForm == null) {
@@ -64,15 +38,10 @@ import contactImage from '../assets/img/coffee-plant.jpg'
                     let formattedContent = `From: ${formContent.get("email")}`;
                     formattedContent += "\n\n";
                     formattedContent += formContent.get("message");
-                    const encryptedFormData = {
-                        "access_key": formContent.get("access_key"),
-                        name: "User",
-                        content: await encryptString(ourPublicKey, formattedContent),
-                    };
+                    formContent.set("message", formattedContent);
                     const requestOptions = {
                         method: contactForm.getAttribute("method"),
-                        body: JSON.stringify(encryptedFormData),
-                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formContent),
                     };
                     const requestTarget = contactForm.getAttribute("action");
                     const formResponse = await fetch(requestTarget, requestOptions);
