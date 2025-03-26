@@ -1,0 +1,121 @@
+---
+import SidebarLayout from '../layouts/SidebarLayout.astro'
+import { Image } from "astro:assets"
+import mushroomsImage from "../assets/img/mushrooms.jpg"
+---
+<SidebarLayout
+  title="Contact Candidate"
+  description="Thank you for supporting the cause!"
+  image={mushroomsImage}
+  alt="Three P.pelliculosa fruiting bodies in their natural habitat: A forest floor covered with wood chips"
+  heading="Candidate Contact"
+>
+  <p>
+    If you'd like to use it, we have put together a message template below.
+    We encourage you to customize it to best represent you!
+  </p>
+  <div class="flex flex-row gap-2 flex-wrap">
+    <button class="copy-template outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Copy template</button>
+    <form class="send-email-form">
+      <button type="submit" class="send-email-button outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-40">Email</button>
+    </form>
+    <form class="send-text-form">
+      <button type="submit" class="send-text-button outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-36">Text</button>
+    </form>
+    <a href="sms:" class="text-link hidden"></a>
+    <a href="mailto:" class="email-link hidden"></a>
+
+  </div>
+  <div class="template border-black border-2 p-2">
+    <p>
+      Hello,
+    </p>
+    <p>
+      I'm reaching out because I would like to see Madison decriminalize psychedelic/entheogenic plants.
+    </p>
+    <p>
+      Especially as academic studies have started to solidify the benefits and safety profile of psychedelics, there are many folks in Madison who responsibly and successfully use these plants to improve their mental health. It would be incredible if they could do so without putting themselves at risk of a major, life-altering criminal charge.
+    </p>
+    <p>
+      I encourage you to support Decriminalize Nature Madison, the local movement to decriminalize psychedelic plants. You can contact them via email at <a href="mailto:organizers@dnmadison.org">organizers@dnmadison.org</a>.
+    </p>
+    <p>
+      They also have a website available with more information: <a href="https://dnmadison.org">https://dnmadison.org</a>.
+    </p>
+    <p>
+      Thank you!
+    </p>
+  </div>
+
+  <style>
+      .template p:first-of-type {
+          padding-top: 0;
+      }
+      .template p {
+          padding-top: 0.75rem;
+      }
+  </style>
+
+  <script>
+
+    document.addEventListener("astro:page-load", () => {
+      const matomoActionsArray = (window as any)._paq as Array<Array<any>>;
+      const queryParams = new URLSearchParams(window.location.search);
+      const candidate = queryParams.get("candidate");
+      const candidateMap = {
+        "davy": {"name": "Davy Mayer", "phone": "6084197066", "email": "davy@votedavy.com"},
+        "julia": {"name": "Julia Matthews", "phone": "6085712640", "email": "juliamatthewsfor12@gmail.com"},
+        "noah": {"name": "Noah Lieberman", "phone": null, "email": "noah@noahforcouncil.com"}
+      }
+      const sendEmailForm = document.querySelector(".send-email-form");
+      const sendTextForm = document.querySelector(".send-text-form");
+      const sendTextButton = document.querySelector(".send-text-button");
+      const sendEmailButton = document.querySelector(".send-email-button");
+      const sendEmailLink = document.querySelector(".email-link") as HTMLAnchorElement;
+      const sendTextLink = document.querySelector(".text-link") as HTMLAnchorElement;
+      const copyTemplateButton = document.querySelector(".copy-template");
+      if (sendEmailForm != null) {
+        const candidateData = candidateMap[candidate];
+        if (candidateData == null) {
+          alert("Error loading candidate " + candidate);
+          return;
+        }
+        sendTextButton.textContent += " " + candidateData["name"];
+        sendEmailButton.textContent += " " + candidateData["name"];
+        if (candidateData["phone"] != null) {
+          sendTextLink.href += candidateData["phone"];
+        } else {
+          sendTextForm.classList.add("hidden");
+        }
+
+        sendEmailLink.href += candidateData["email"];
+        sendEmailForm.addEventListener("submit", event => {
+          event.preventDefault();
+          sendEmailLink.click();
+          return false;
+        })
+        sendTextForm.addEventListener("submit", event => {
+          event.preventDefault();
+          sendTextLink.click();
+          return false;
+        })
+        const templateContainer = document.querySelector(".template");
+        let templateText = "";
+        for (const childElement of templateContainer.children) {
+          templateText += childElement.textContent.trim();
+          templateText += "\n\n";
+        }
+        templateText = templateText.substring(0, templateText.length - 2);
+        copyTemplateButton.addEventListener("click", () => {
+          if (matomoActionsArray != null) {
+            matomoActionsArray.push(["trackEvent", "Contact Candidate", "Template copied", "1"]);
+          }
+          navigator.clipboard.writeText(templateText);
+          copyTemplateButton.textContent = "Copied!";
+        });
+
+      }
+    });
+  </script>
+
+</SidebarLayout>
