@@ -16,7 +16,7 @@ visit https://matomo.org/faq/general/faq_18254/.
 
 Our website is hosted using services from DigitalOcean, GitHub, and Cloudflare. The contact form uses [web3forms](https://web3forms.com/)
 to handle form submissions. Your email and message content are encrypted with our PGP public key before they are sent to 
-[web3forms](https://web3forms.com/). Due to the encryption,[web3forms](https://web3forms.com/) cannot see your email or 
+[web3forms](https://web3forms.com/). Due to this encryption, [web3forms](https://web3forms.com/) cannot see your email or 
 message - but they can see your IP address. For more details, please review [the privacy policy for web3forms](https://web3forms.com/privacy).
 
 #### Use of Information
