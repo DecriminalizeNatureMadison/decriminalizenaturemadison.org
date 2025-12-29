@@ -3,62 +3,100 @@ import SidebarLayout from '../layouts/SidebarLayout.astro'
 import contactImage from '../assets/img/coffee-plant.jpg'
 ---
 <SidebarLayout
-        title="Contact"
-        image={contactImage}
-        alt="A Coffea plant with green leaves and a few clumps of red berries"
-        heading="Contact"
-        description="Fill out the form and we will get back to you as soon as possible!"
-        class="w-full"
+  title="Contact"
+  image={contactImage}
+  alt="A Coffea plant with green leaves and a few clumps of red berries"
+  heading="Contact"
+  description="Fill out the form and we will get back to you as soon as possible!"
+  class="w-full"
 >
-    <form id="contact-form" action="https://forms.decriminalizenaturemadison.org:8443/form-submission">
-        <input type="hidden" name="form" value="Contact Form">
-        <label for="email">Email:</label>
-        <input id="email" name="email" type="email" class="block w-full" required="required"></input>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" class="h-28 bg w-full" required="required"></textarea>
-        <label for="challenge">Anti-spam: What is the name of Wisconsin's capital city?</label>
-        <input id="challenge" name="challenge" type="text" class="block w-full" required="required"></input>
-        <label for="hidden" class="hidden">Hidden input</label>
-        <input id="hidden" name="hidden" type="email" class="hidden"></input>
-        <button type="submit" class="outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-24 my-1">Send</button>
-    </form>
-    <p class="form-status"></p>
+  <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="df33f99c-506f-40d4-838f-357f562cf195">
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="email" class="block w-full" required="required"></input>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" class="h-28 bg w-full" required="required"></textarea>
+    <label for="challenge">Anti-spam: What is the name of Wisconsin's capital city?</label>
+    <input id="challenge" name="challenge" type="text" class="block w-full" required="required"></input>
+    <label for="hidden" class="hidden">Hidden input</label>
+    <input id="hidden" name="hidden" type="email" class="hidden"></input>
+    <button type="submit" class="outline-emerald-900 bg-emerald-700 text-gray-100 h-12 w-24 my-1">Send</button>
+  </form>
+  <p class="form-status"></p>
 
-    <script>
-        (async function() {
-            document.addEventListener("astro:page-load", async () => {
-                const contactForm: HTMLFormElement = document.getElementById("contact-form") as HTMLFormElement;
-                // TODO: fix the need for this
-                if (contactForm == null) {
-                    return;
-                }
-                const statusElement = document.querySelector(".form-status");
-                const submitButton = contactForm.querySelector("button[type='submit']");
-                contactForm.addEventListener("submit", async event => {
-                    if (!contactForm.reportValidity()) {
-                        return;
-                    }
-                    event.preventDefault();
-                    const formContent = new FormData(contactForm);
-                    const requestOptions = {
-                        method: "POST",
-                        body: formContent,
-                    };
-                    const requestTarget = contactForm.getAttribute("action");
-                    statusElement.textContent = "Sending...";
-                    submitButton.setAttribute("disabled", "disabled");
-                    // noinspection TypeScriptValidateTypes
-                    const formResponse = await fetch(requestTarget, requestOptions);
-                    if (formResponse.status === 200) {
-                        statusElement.textContent = "Successfully sent! Thanks for reaching out.";
-                        contactForm.reset();
-                    } else {
-                        statusElement.textContent = await formResponse.text();
-                    }
-                    submitButton.removeAttribute("disabled");
-                });
-            });
-        })();
-    </script>
+  <script>
+    // PGP encrypt form submissions because we don't host web3forms so they should not get plaintext :)
+    import * as openpgp from 'openpgp';
+    (async function() {
+      document.addEventListener("astro:page-load", async () => {
+        const ourPublicKeyBlock = `-----BEGIN PGP PUBLIC KEY BLOCK-----\n\n` +
+          `mDMEZnj4ZBYJKwYBBAHaRw8BAQdAkBMV2/ZC+cDKzqTOOrPeRzJdW0tFy59nwae3` +
+          `ZlL4pn20QURlY3JpbWluYWxpemUgTmF0dXJlIE1hZGlzb24gPHBncEBkZWNyaW1p` +
+          `bmFsaXplbmF0dXJlbWFkaXNvbi5vcmc+iJoEExYKAEIWIQQbpJ2/zgErdXe5Y5Tw` +
+          `kLQwVdNHxwUCZnj4ZAIbAwUJA8HDLAULCQgHAgMiAgEGFQoJCAsCBBYCAwECHgcC` +
+          `F4AACgkQ8JC0MFXTR8cHsgD+NnPzO2LC+od30X+NMoMJefDuqOYMABSwQuMU0eo5` +
+          `Q8UA/isuXebHqdfqNQYeJD3cK3QrH9hCdolpcB5hrn2zU/YHuDgEZnj4ZBIKKwYB` +
+          `BAGXVQEFAQEHQC8uODXofmw+2QrNTMRu/Hq1xoXdwoNRt5JGkwQa3dZeAwEIB4h+` +
+          `BBgWCgAmFiEEG6Sdv84BK3V3uWOU8JC0MFXTR8cFAmZ4+GQCGwwFCQPBwywACgkQ` +
+          `8JC0MFXTR8es3wEAojZz0wbHl/T/CcGOe33HfhSgqUj+SFpWBaxdK/kf5jgBAIS/` +
+          `mjY0qsB3yd4DB6azZgWDdpDbE5lk4tBfy5axHsUE` +
+          `=FNiU\n` +
+          `-----END PGP PUBLIC KEY BLOCK-----\n`;
+
+        const ourPublicKey = await openpgp.readKey({ armoredKey: ourPublicKeyBlock });
+
+        async function encryptString(publicKey: openpgp.PublicKey, string: String): Promise<String> {
+          const message = await openpgp.createMessage({ text: string });
+          return await openpgp.encrypt({
+            message: message,
+            encryptionKeys: publicKey,
+          });
+        }
+
+        const contactForm: HTMLFormElement = document.getElementById("contact-form") as HTMLFormElement;
+        // TODO: fix the need for this
+        if (contactForm == null) {
+          return;
+        }
+        const statusElement = document.querySelector(".form-status");
+        contactForm.addEventListener("submit", async event => {
+          if (!contactForm.reportValidity()) {
+            return;
+          }
+          event.preventDefault();
+          const formContent = new FormData(contactForm);
+          if (formContent.get("hidden") != "") {
+            statusElement.textContent = "You seem to be a robot. Try again later. If you are a human, try disabling autofill.";
+            return;
+          } else if ((formContent.get("challenge") as string)?.toLowerCase().trim() != "madison") {
+            statusElement.textContent = "Incorrect answer to anti-spam question.";
+            return;
+          }
+          statusElement.textContent = "";
+          let formattedContent = `From: ${formContent.get("email")}`;
+          formattedContent += "\n\n";
+          formattedContent += formContent.get("message");
+          const encryptedFormData = {
+            "access_key": formContent.get("access_key"),
+            name: "User",
+            content: await encryptString(ourPublicKey, formattedContent),
+          };
+          const requestOptions = {
+            method: contactForm.getAttribute("method"),
+            body: JSON.stringify(encryptedFormData),
+            headers: { "Content-Type": "application/json" },
+          };
+          const requestTarget = contactForm.getAttribute("action");
+          const formResponse = await fetch(requestTarget, requestOptions);
+          if (formResponse.status === 200) {
+            statusElement.textContent = "Successfully sent! Thanks for reaching out.";
+            contactForm.reset();
+          } else {
+            statusElement.textContent = "Something went wrong. Please try again.";
+          }
+        });
+      });
+    })();
+  </script>
 </SidebarLayout>
 

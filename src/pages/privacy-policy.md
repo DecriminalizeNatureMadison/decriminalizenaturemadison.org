@@ -3,7 +3,7 @@ layout: ../layouts/MarkdownLayout.astro
 title: Privacy Policy
 ---
 
-Effective Date: 08/11/2024
+Effective Date: 12/29/2025
 
 #### Information We Collect
 
@@ -14,7 +14,10 @@ We use Matomo as our analytics platform. Matomo is open-source analytics softwar
 We host our own Matomo instance to further protect user privacy. For a full list of information collected by Matomo, please 
 visit https://matomo.org/faq/general/faq_18254/.
 
-Our website is hosted using services from DigitalOcean, GitHub, and Cloudflare.
+Our website is hosted using services from DigitalOcean, GitHub, and Cloudflare. The contact form uses [web3forms](https://web3forms.com/)
+to handle form submissions. Your email and message content are encrypted with our PGP public key before they are sent to 
+[web3forms](https://web3forms.com/). Due to the encryption,[web3forms](https://web3forms.com/) cannot see your email or 
+message - but they can see your IP address. For more details, please review [the privacy policy for web3forms](https://web3forms.com/privacy).
 
 #### Use of Information
 
