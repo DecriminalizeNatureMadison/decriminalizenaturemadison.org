@@ -29,19 +29,7 @@ import contactImage from '../assets/img/coffee-plant.jpg'
     import * as openpgp from 'openpgp';
     (async function() {
       document.addEventListener("astro:page-load", async () => {
-        const ourPublicKeyBlock = `-----BEGIN PGP PUBLIC KEY BLOCK-----\n\n` +
-          `mDMEZnj4ZBYJKwYBBAHaRw8BAQdAkBMV2/ZC+cDKzqTOOrPeRzJdW0tFy59nwae3` +
-          `ZlL4pn20QURlY3JpbWluYWxpemUgTmF0dXJlIE1hZGlzb24gPHBncEBkZWNyaW1p` +
-          `bmFsaXplbmF0dXJlbWFkaXNvbi5vcmc+iJoEExYKAEIWIQQbpJ2/zgErdXe5Y5Tw` +
-          `kLQwVdNHxwUCZnj4ZAIbAwUJA8HDLAULCQgHAgMiAgEGFQoJCAsCBBYCAwECHgcC` +
-          `F4AACgkQ8JC0MFXTR8cHsgD+NnPzO2LC+od30X+NMoMJefDuqOYMABSwQuMU0eo5` +
-          `Q8UA/isuXebHqdfqNQYeJD3cK3QrH9hCdolpcB5hrn2zU/YHuDgEZnj4ZBIKKwYB` +
-          `BAGXVQEFAQEHQC8uODXofmw+2QrNTMRu/Hq1xoXdwoNRt5JGkwQa3dZeAwEIB4h+` +
-          `BBgWCgAmFiEEG6Sdv84BK3V3uWOU8JC0MFXTR8cFAmZ4+GQCGwwFCQPBwywACgkQ` +
-          `8JC0MFXTR8es3wEAojZz0wbHl/T/CcGOe33HfhSgqUj+SFpWBaxdK/kf5jgBAIS/` +
-          `mjY0qsB3yd4DB6azZgWDdpDbE5lk4tBfy5axHsUE` +
-          `=FNiU\n` +
-          `-----END PGP PUBLIC KEY BLOCK-----\n`;
+        const ourPublicKeyBlock = await fetch("/pgp-public-key.asc").then(r => r.text());
 
         const ourPublicKey = await openpgp.readKey({ armoredKey: ourPublicKeyBlock });
 
